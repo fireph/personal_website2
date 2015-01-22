@@ -1,0 +1,122 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.viewport {
+    width: 100%;
+    height: 100%;
+
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    perspective: 1200px;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    -o-perspective-origin: 50% 50%;
+    -ms-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+}
+
+#pyramid-1 {
+    top: 10%;
+    left: 20%;
+}
+
+#pyramid-2 {
+    top: 10%;
+    right: 30%;
+}
+
+.pyramid {
+    position: absolute;
+    margin: 100px auto;
+    height: 500px;
+    width: 100px;
+
+    -webkit-transition: transform 1s linear;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 116px 200px 116px;
+
+    -moz-transform-style: preserve-3d;
+    -moz-transform-origin: 116px 200px 116px;
+
+    -ms-transform-style: preserve-3d;
+    -ms-transform-origin: 116px 200px 116px;
+
+    transform-style: preserve-3d;
+    transform-origin: 116px 200px 116px;
+}
+
+.pyramid > div {
+    position: absolute;
+    border-style: solid;
+    border-width: 200px 0 200px 346px;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin:    0 0;
+    -ms-transform-origin:     0 0;
+    transform-origin:         0 0;
+}
+
+/* Put some text on each face */
+.pyramid > div:after {
+    position: absolute;
+    color: #fff;
+    left: -250px;
+    text-align: center;
+    -webkit-transform: rotateZ(90deg);
+    -moz-transform:    rotateZ(90deg);
+    -ms-transform:     rotateZ(90deg);
+    transform:         rotateZ(90deg);
+}
+
+.pyramid > div > .facetext {
+    position: absolute;
+    color: #fff;
+    left: -250px;
+    text-align: center;
+    -webkit-transform: rotateZ(90deg);
+    -moz-transform:    rotateZ(90deg);
+    -ms-transform:     rotateZ(90deg);
+    transform:         rotateZ(90deg);
+}
+
+.pyramid > div:first-child  {
+    border-color: transparent transparent transparent rgba(50, 0, 0, 0.9);
+    -webkit-transform: rotateY(-19.5deg) rotateX(180deg) translateY(-400px);
+    -moz-transform:    rotateY(-19.5deg) rotateX(180deg) translateY(-400px);
+    -ms-transform:     rotateY(-19.5deg) rotateX(180deg) translateY(-400px);
+    transform:         rotateY(-19.5deg) rotateX(180deg) translateY(-400px);
+}
+
+.pyramid > div:nth-child(2) {
+    border-color: transparent transparent transparent rgba(0, 50, 50, 0.9);
+    -webkit-transform: rotateY(90deg) rotateZ(60deg) rotateX(180deg) translateY(-400px);
+    -moz-transform:    rotateY(90deg) rotateZ(60deg) rotateX(180deg) translateY(-400px);
+    -ms-transform:     rotateY(90deg) rotateZ(60deg) rotateX(180deg) translateY(-400px);
+    transform:         rotateY(90deg) rotateZ(60deg) rotateX(180deg) translateY(-400px);
+}
+
+.pyramid > div:nth-child(3) {
+    border-color: transparent transparent transparent rgba(0, 0, 50, 0.9);
+    -webkit-transform: rotateX(60deg) rotateY(19.5deg);
+    -moz-transform:    rotateX(60deg) rotateY(19.5deg);
+    -ms-transform:     rotateX(60deg) rotateY(19.5deg);
+    transform:         rotateX(60deg) rotateY(19.5deg);
+}
+
+.pyramid > div:nth-child(4) {
+    border-color: transparent transparent transparent rgba(50, 50, 0, 0.9);
+    -webkit-transform: rotateX(-60deg) rotateY(19.5deg) translateX(-116px) translateY(-200px) translateZ(326px);
+    -moz-transform:    rotateX(-60deg) rotateY(19.5deg) translateX(-116px) translateY(-200px) translateZ(326px);
+    -ms-transform:     rotateX(-60deg) rotateY(19.5deg) translateX(-116px) translateY(-200px) translateZ(326px);
+    transform:         rotateX(-60deg) rotateY(19.5deg) translateX(-116px) translateY(-200px) translateZ(326px);
+}
