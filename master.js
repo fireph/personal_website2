@@ -59,7 +59,7 @@ var rotations = {
     x: 25,
     y: 15,
     z: -10
-}
+};
 
 var speed = 0.5;
 
