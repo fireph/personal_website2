@@ -8,6 +8,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
         <link href="master.css" rel="stylesheet">
 
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -18,18 +20,36 @@
     </head>
     <body>
         <div class="viewport">
-            <div id="pyramid-1" class="pyramid">
-                <div><div class="facetext">About</div></div>
-                <div><div class="facetext">Projects</div></div>
-                <div><div class="facetext">Blog</div></div>
-                <div><div class="facetext">Lorem ipsum dolor sit amet</div></div>
+            <div onclick="unfold()" id="cube-1" class="cube">
+                <div onclick="goToLink('https://github.com/DungFu')" class="cube-side front">
+                    <img class="background-logo" src="https://cdn1.iconfinder.com/data/icons/simple-icons/1024/github-1024-black.png">
+                </div>
+                <div onclick="goToLink('https://www.linkedin.com/in/meyerfrederick/')" class="cube-side back">
+                    <img class="background-logo-small" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png">
+                </div>
+                <div onclick="openAbout()" class="cube-side left">
+                    <p class="overlay-text">About Me</p>
+                    <img class="background-logo-text" src="https://avatars2.githubusercontent.com/u/443370?v=3&s=460">
+                </div>
+                <div onclick="openMyProjects()" class="cube-side right">
+                    <p class="overlay-text">My Projects</p>
+                    <img class="background-logo-text" src="https://avatars2.githubusercontent.com/u/443370?v=3&s=460">
+                </div>
+                <div onclick="goToLink('http://www.fmeyer.com/')" class="cube-side top">
+                    <p class="overlay-text">My Blog</p>
+                    <img class="background-logo-text" src="http://www.fmeyer.com/content/images/2014/May/Pirate-Icon-2_256x256-321292087422.png">
+                </div>
+                <div class="cube-side bottom">
+                bottom
+                </div>
             </div>
-            <div id="pyramid-2" class="pyramid">
-                <div><div class="facetext">LinkedIn</div></div>
-                <div><div class="facetext">Github</div></div>
-                <div><div class="facetext">Email</div></div>
-                <div><div class="facetext"></div></div>
-            </div>
+        </div>
+        <img id="close-button" onclick="fold()" src="https://cdn3.iconfinder.com/data/icons/eightyshades/512/18_Close-128.png">
+        <div id="about-content">
+            Look how cool I am!
+        </div>
+        <div id="myprojects-content">
+            these are my projects!
         </div>
         <script src="master.js"></script>
     </body>
