@@ -53,7 +53,7 @@ body {
 }
 
 #myprojects-content {
-    overflow: scroll;
+    overflow: auto;
     position: absolute;
     left: 51vmin;
     top: 100%;
