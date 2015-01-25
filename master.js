@@ -7,6 +7,8 @@ window.requestAnimFrame = (function(){
           };
 })();
 
+var previousFrameTime = Date.now();
+
 function addClass(ele, cName) {
     ele.className += " "+cName;
 }
@@ -61,25 +63,29 @@ var rotations = {
 
 var speed = 0.5;
 
-function rotate() {
+function rotate(delta) {
     if (animationEnabled) {
-        rotations.x += (Math.random()/5+1)*speed;
+        rotations.x += (Math.random()/5+1)*speed * (60*delta);
         rotations.x = rotations.x % 360;
-        rotations.y += (Math.random()/5+1)*speed;
+        rotations.y += (Math.random()/5+1)*speed * (60*delta);
         rotations.y = rotations.y % 360;
-        rotations.z += (Math.random()/5+1)*speed;
+        rotations.z += (Math.random()/5+1)*speed * (60*delta);
         rotations.z = rotations.z % 360;
         document.getElementById("cube-1").style.transform="rotateX("+rotations.x+"deg) rotateY("+rotations.y+"deg) rotateZ("+rotations.z+"deg)";
     }
 }
 
-function render() {
-    rotate();
+function render(delta) {
+    rotate(delta);
 }
 
 (function animloop(){
   requestAnimFrame(animloop);
-  render();
+  var now = Date.now();
+  var delta = (now - previousFrameTime)/1000;
+  if (delta > 1/10) { delta = 1/60; }
+  render(delta);
+  previousFrameTime = now;
 })();
 
 function fold() {
