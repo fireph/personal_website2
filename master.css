@@ -12,6 +12,7 @@ body {
     background-attachment: fixed;
     background-position: center bottom;
     background-size: 100%;
+    overflow: hidden;
 }
 
 #close-button {
@@ -33,7 +34,7 @@ body {
 }
 
 #about-content {
-    overflow: scroll;
+    overflow: auto;
     position: absolute;
     left: 51vmin;
     top: 100%;
@@ -119,6 +120,7 @@ body {
 }
 
 .viewport {
+    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
