@@ -22,25 +22,26 @@
         <div class="viewport">
             <div onclick="unfold()" id="cube-1" class="cube">
                 <div onclick="goToLink('https://github.com/DungFu')" class="cube-side front">
-                    <img class="background-logo" src="https://cdn1.iconfinder.com/data/icons/simple-icons/1024/github-1024-black.png">
+                    <img class="background-logo-small" src="github.png">
                 </div>
                 <div onclick="goToLink('https://www.linkedin.com/in/meyerfrederick/')" class="cube-side back">
-                    <img class="background-logo-small" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png">
+                    <img class="background-logo-xsmall" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png">
                 </div>
-                <div onclick="openAbout()" class="cube-side left">
+                <div onclick="toggleAbout()" class="cube-side left">
                     <p class="overlay-text">About Me</p>
-                    <img class="background-logo-text" src="https://avatars2.githubusercontent.com/u/443370?v=3&s=460">
+                    <img class="background-logo-text" src="profile_pic.jpeg">
                 </div>
-                <div onclick="openMyProjects()" class="cube-side right">
+                <div onclick="toggleMyProjects()" class="cube-side right">
                     <p class="overlay-text">My Projects</p>
-                    <img class="background-logo-text" src="https://avatars2.githubusercontent.com/u/443370?v=3&s=460">
+                    <img class="background-logo-text" src="profile_pic.jpeg">
                 </div>
                 <div onclick="goToLink('http://www.fmeyer.com/')" class="cube-side top">
                     <p class="overlay-text">My Blog</p>
-                    <img class="background-logo-text" src="http://www.fmeyer.com/content/images/2014/May/Pirate-Icon-2_256x256-321292087422.png">
+                    <img class="background-logo-text" src="pirate_icon.png">
                 </div>
-                <div class="cube-side bottom">
-                bottom
+                <div onclick="goToLink('mailto:freddiemeyer@gmail.com')" class="cube-side bottom">
+                    <p class="overlay-text">Contact Me</p>
+                    <img class="background-logo-text" src="email.png">
                 </div>
             </div>
         </div>

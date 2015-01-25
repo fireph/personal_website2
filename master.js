@@ -7,7 +7,51 @@ window.requestAnimFrame = (function(){
           };
 })();
 
+function addClass(ele, cName) {
+    ele.className += " "+cName;
+}
+
+function removeClass(ele, cName) {
+    ele.className = ele.className.replace(" "+cName, "");
+    while (ele.className.indexOf(cName) > -1) {
+        ele.className = ele.className.replace(cName, "");
+    }
+}
+
 var animationEnabled = true;
+
+var aboutOpen = false;
+var myProjectsOpen = false;
+
+function closeAbout() {
+    removeClass(document.getElementById('about-content'), "show");
+    aboutOpen = false;
+}
+
+function toggleAbout() {
+    if (!aboutOpen && !animationEnabled) {
+        closeMyProjects();
+        addClass(document.getElementById('about-content'), "show");
+        aboutOpen = true;
+    } else {
+        closeAbout();
+    }
+}
+
+function closeMyProjects() {
+    removeClass(document.getElementById('myprojects-content'), "show");
+    myProjectsOpen = false;
+}
+
+function toggleMyProjects() {
+    if (!myProjectsOpen && !animationEnabled) {
+        closeAbout();
+        addClass(document.getElementById('myprojects-content'), "show");
+        myProjectsOpen = true;
+    } else {
+        closeMyProjects();
+    }
+}
 
 var rotations = {
     x: 25,
@@ -15,7 +59,7 @@ var rotations = {
     z: -10
 }
 
-var speed = 1;
+var speed = 0.5;
 
 function rotate() {
     if (animationEnabled) {
@@ -45,11 +89,13 @@ function fold() {
             console.log(divs[i].className)
             divs[i].className = divs[i].className.replace("unfold", "");
         }
-        document.getElementById('about-content').className = document.getElementById('about-content').className.replace(" show", "");
-        document.getElementById('myprojects-content').className = document.getElementById('myprojects-content').className.replace(" show", "");
-        document.getElementById('close-button').className = document.getElementById('close-button').className.replace(" show", "");
+        removeClass(document.getElementById('cube-1'), "open");
+        closeAbout();
+        closeMyProjects();
+        removeClass(document.getElementById('close-button'), "show");
         setTimeout(function() {
             animationEnabled = true;
+            removeClass(document.getElementById('cube-1'), "transitions");
         }, 2000);
     }
 }
@@ -60,38 +106,14 @@ function unfold() {
         rotations.x = 0;
         rotations.y = 0;
         rotations.z = 0;
+        addClass(document.getElementById("cube-1"), "open");
+        addClass(document.getElementById("cube-1"), "transitions");
         document.getElementById("cube-1").style.transform="rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
         var divs = document.getElementById("cube-1").children;
         for (var i = 0; i < divs.length; i++) {
-            divs[i].className += " unfold";
+            addClass(divs[i], "unfold");
         }
-        // document.getElementById('content').className += " show";
-        document.getElementById('close-button').className += " show";
-    }
-}
-
-var aboutOpen = false;
-var myProjectsOpen = false;
-
-function openAbout() {
-    if (!aboutOpen) {
-        if (myProjectsOpen) { openMyProjects(); }
-        document.getElementById('about-content').className += " show";
-        aboutOpen = true;
-    } else {
-        document.getElementById('about-content').className = document.getElementById('about-content').className.replace(" show", "");
-        aboutOpen = false;
-    }
-}
-
-function openMyProjects() {
-    if (!myProjectsOpen) {
-        if (aboutOpen) { openAbout(); }
-        document.getElementById('myprojects-content').className += " show";
-        myProjectsOpen = true;
-    } else {
-        document.getElementById('myprojects-content').className = document.getElementById('myprojects-content').className.replace(" show", "");
-        myProjectsOpen = false;
+        addClass(document.getElementById('close-button'), "show");
     }
 }
 
