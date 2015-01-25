@@ -84,10 +84,12 @@ function render() {
 
 function fold() {
     if (!animationEnabled) {
-        var divs = document.getElementById("cube-1").children;
-        for (var i = 0; i < divs.length; i++) {
-            console.log(divs[i].className)
-            divs[i].className = divs[i].className.replace("unfold", "");
+        var classes = ['front', 'back', 'left', 'right', 'top', 'bottom'];
+        for (var i = 0; i < classes.length; i++) {
+            var divs = document.getElementsByClassName(classes[i]);
+            for (var j = 0; j < divs.length; j++) {
+                removeClass(divs[j], "unfold");
+            }
         }
         removeClass(document.getElementById('cube-1'), "open");
         closeAbout();
@@ -109,9 +111,12 @@ function unfold() {
         addClass(document.getElementById("cube-1"), "open");
         addClass(document.getElementById("cube-1"), "transitions");
         document.getElementById("cube-1").style.transform="rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
-        var divs = document.getElementById("cube-1").children;
-        for (var i = 0; i < divs.length; i++) {
-            addClass(divs[i], "unfold");
+        var classes = ['front', 'back', 'left', 'right', 'top', 'bottom'];
+        for (var i = 0; i < classes.length; i++) {
+            var divs = document.getElementsByClassName(classes[i]);
+            for (var j = 0; j < divs.length; j++) {
+                addClass(divs[j], "unfold");
+            }
         }
         addClass(document.getElementById('close-button'), "show");
     }
