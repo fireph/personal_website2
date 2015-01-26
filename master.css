@@ -41,7 +41,7 @@ body {
     top: 100%;
     right: 0;
     bottom: 0;
-    background-color: #888;
+    background-color: #a69fa9;
     opacity: 0.0;
     -webkit-transition: top 1s ease, opacity 1s ease;
     -moz-transition: top 1s ease, opacity 1s ease;
@@ -54,25 +54,29 @@ body {
     top: 51vmin;
 }
 
+.content p {
+    float: left;
+}
+
 .content-container {
     padding: 2vmin 5vmin 2vmin 5vmin;
 }
 
 .content h1 {
+    text-align: center;
     color: #BEDB39;
 }
 
 .mosaic-img {
     cursor: pointer;
-    width: 20vmin;
-    height: 20vmin;
+    width: 19vmin;
+    height: 19vmin;
     background-image: url(img/thumbnails/thumbs_all.jpg);
-    background-size: 60vmin 40vmin;
+    background-size: 57vmin 38vmin;
     position: relative;
     border-radius: 3px;
     float: left;
-    margin-right: 2.5vmin;
-    margin-bottom: 2.5vmin;
+    margin: 2vmin;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -96,6 +100,33 @@ body {
     opacity: 1.0;
 }
 
+.project-img {
+    float: left;
+    width: 38vmin;
+    margin: 0 2vmin 2vmin 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: -webkit-box-shadow 0.3s ease;
+    -moz-transition: -moz-box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
+}
+
+.project-img:hover {
+    -webkit-box-shadow: 0 0 10px 0 rgba(138, 9, 23, 0.5);
+    -moz-box-shadow:    0 0 10px 0 rgba(138, 9, 23, 0.5);
+    box-shadow:         0 0 10px 0 rgba(138, 9, 23, 0.5);
+}
+
+.back-button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 4vmin;
+    margin-left: -5vmin;
+    margin-top: -2vmin;
+}
+
 .mosaic-text {
     font-size: 2vmin;
     color: #ccc;
@@ -109,6 +140,47 @@ body {
     -moz-transition: opacity 0.3s ease;
     -ms-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
+}
+
+.back-button2 {
+    top: -6px;
+    cursor: pointer;
+    position: relative;
+    background: #333953;
+    background: -moz-linear-gradient(top, #3f4666, #272c40);
+    background: -webkit-linear-gradient(top, #3f4666, #272c40);
+    background: linear-gradient(to bottom, #3f4666, #272c40);
+    display: inline-block;
+    padding: 6px 8px 6px 4px;
+    color: whitesmoke;
+    text-decoration: none;
+    font: 14px "proxima nova", helvetica, arial, sans-serif;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    z-index: 1;
+    margin-right: 3vmin;
+}
+.back-button2:before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background: #333953;
+    background: -moz-linear-gradient(top left, #3f4666, #272c40);
+    background: -webkit-linear-gradient(top left, #3f4666, #272c40);
+    background: linear-gradient(to bottom right, #3f4666, #272c40);
+    left: -9px;
+    display: block;
+    top: 4px;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: -1;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
 
 .background-logo {
@@ -196,6 +268,11 @@ body {
     margin-left: 25vmin;
 }
 
+#cube-1.corner {
+    margin-top: 0;
+    margin-left: 0;
+}
+
 .cube {
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
@@ -220,7 +297,7 @@ body {
     position: absolute;
     height: 25vmin;
     width: 25vmin;
-    background-color: #DB9E36;
+    background-color: #B891C3; /*71B4D2*/
     border: 1px solid #555;
     margin: -1px;
     border-radius: 3px;
@@ -230,10 +307,14 @@ body {
     -moz-transform-style: preserve-3d;
     -ms-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-transition: -webkit-transform 2s ease;
-    -moz-transition: -moz-transform 2s ease;
-    -ms-transition: -moz-transform 2s ease;
-    transition: transform 2s ease;
+    -webkit-transition: -webkit-transform 2s ease, background-color 0.3s ease;
+    -moz-transition: -moz-transform 2s ease, background-color 0.3s ease;
+    -ms-transition: -moz-transform 2s ease, background-color 0.3s ease;
+    transition: transform 2s ease, background-color 0.3s ease;
+}
+
+.cube .cube-side:hover {
+    background-color: #A86B97;
 }
 
 .cube .top {

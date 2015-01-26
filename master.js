@@ -79,6 +79,35 @@ function render(delta) {
   previousFrameTime = now;
 })();
 
+function foldToPlace(place) {
+    if (!animationEnabled) {
+        var classes = ['front', 'back', 'left', 'right', 'top', 'bottom'];
+        for (var i = 0; i < classes.length; i++) {
+            var divs = document.getElementsByClassName(classes[i]);
+            for (var j = 0; j < divs.length; j++) {
+                removeClass(divs[j], "unfold");
+            }
+        }
+        removeClass(document.getElementById('cube-1'), "open");
+        closeAll();
+        removeClass(document.getElementById('close-button'), "show");
+
+        addClass(document.getElementById("cube-1"), "corner");
+
+        if (place == 'right') {
+            document.getElementById("cube-1").style.transform="rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+        } else if (place == 'left') {
+            document.getElementById("cube-1").style.transform="rotateX(0deg) rotateY(90deg) rotateZ(0deg)";
+        } else if (place == 'top') {
+            document.getElementById("cube-1").style.transform="rotateX(90deg) rotateY(0deg) rotateZ(0deg)";
+        } else if (place == 'bottom') {
+            document.getElementById("cube-1").style.transform="rotateX(-90deg) rotateY(0deg) rotateZ(0deg)";
+        } else if (place == 'back') {
+            document.getElementById("cube-1").style.transform="rotateX(0deg) rotateY(180deg) rotateZ(0deg)";
+        }
+    }
+}
+
 function fold() {
     if (!animationEnabled) {
         var classes = ['front', 'back', 'left', 'right', 'top', 'bottom'];
