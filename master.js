@@ -22,36 +22,27 @@ function removeClass(ele, cName) {
 
 var animationEnabled = true;
 
-var aboutOpen = false;
-var myProjectsOpen = false;
+var openStatus = {};
 
-function closeAbout() {
-    removeClass(document.getElementById('about-content'), "show");
-    aboutOpen = false;
+function close(name) {
+    removeClass(document.getElementById(name), "show");
+    openStatus[name] = false;
 }
 
-function toggleAbout() {
-    if (!aboutOpen && !animationEnabled) {
-        closeMyProjects();
-        addClass(document.getElementById('about-content'), "show");
-        aboutOpen = true;
-    } else {
-        closeAbout();
+function closeAll() {
+    var divs = document.getElementsByClassName('content');
+    for (var i = 0; i < divs.length; i++) {
+        close(divs[i].id);
     }
 }
 
-function closeMyProjects() {
-    removeClass(document.getElementById('myprojects-content'), "show");
-    myProjectsOpen = false;
-}
-
-function toggleMyProjects() {
-    if (!myProjectsOpen && !animationEnabled) {
-        closeAbout();
-        addClass(document.getElementById('myprojects-content'), "show");
-        myProjectsOpen = true;
+function toggle(name) {
+    if (!openStatus[name] && !animationEnabled) {
+        closeAll();
+        addClass(document.getElementById(name), "show");
+        openStatus[name] = true;
     } else {
-        closeMyProjects();
+        close(name);
     }
 }
 
@@ -98,8 +89,7 @@ function fold() {
             }
         }
         removeClass(document.getElementById('cube-1'), "open");
-        closeAbout();
-        closeMyProjects();
+        closeAll();
         removeClass(document.getElementById('close-button'), "show");
         setTimeout(function() {
             animationEnabled = true;
