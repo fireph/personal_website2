@@ -20,6 +20,14 @@ function removeClass(ele, cName) {
     }
 }
 
+function setTransformOnVendors(div, transform) {
+    div.style.webkitTransform = transform;
+    div.style.MozTransform = transform;
+    div.style.msTransform = transform;
+    div.style.OTransform = transform;
+    div.style.transform = transform;
+}
+
 var animationEnabled = true;
 
 var openStatus = {};
@@ -62,7 +70,9 @@ function rotate(delta) {
         rotations.y = rotations.y % 360;
         rotations.z += (Math.random()/5+1)*speed * (60*delta);
         rotations.z = rotations.z % 360;
-        document.getElementById("cube-1").style.transform="rotateX("+rotations.x+"deg) rotateY("+rotations.y+"deg) rotateZ("+rotations.z+"deg)";
+        setTransformOnVendors(
+            document.getElementById("cube-1"),
+            "rotateX("+rotations.x+"deg) rotateY("+rotations.y+"deg) rotateZ("+rotations.z+"deg)");
     }
 }
 
@@ -95,15 +105,25 @@ function foldToPlace(place) {
         addClass(document.getElementById("cube-1"), "corner");
 
         if (place == 'right') {
-            document.getElementById("cube-1").style.transform="rotateX(0deg) rotateY(-90deg) rotateZ(0deg)";
+            setTransformOnVendors(
+                document.getElementById("cube-1"),
+                "rotateX(0deg) rotateY(-90deg) rotateZ(0deg)");
         } else if (place == 'left') {
-            document.getElementById("cube-1").style.transform="rotateX(0deg) rotateY(90deg) rotateZ(0deg)";
+            setTransformOnVendors(
+                document.getElementById("cube-1"),
+                "rotateX(0deg) rotateY(90deg) rotateZ(0deg)");
         } else if (place == 'top') {
-            document.getElementById("cube-1").style.transform="rotateX(90deg) rotateY(0deg) rotateZ(0deg)";
+            setTransformOnVendors(
+                document.getElementById("cube-1"),
+                "rotateX(90deg) rotateY(0deg) rotateZ(0deg)");
         } else if (place == 'bottom') {
-            document.getElementById("cube-1").style.transform="rotateX(-90deg) rotateY(0deg) rotateZ(0deg)";
+            setTransformOnVendors(
+                document.getElementById("cube-1"),
+                "rotateX(-90deg) rotateY(0deg) rotateZ(0deg)");
         } else if (place == 'back') {
-            document.getElementById("cube-1").style.transform="rotateX(0deg) rotateY(180deg) rotateZ(0deg)";
+            setTransformOnVendors(
+                document.getElementById("cube-1"),
+                "rotateX(0deg) rotateY(180deg) rotateZ(0deg)");
         }
     }
 }
@@ -135,7 +155,9 @@ function unfold() {
         rotations.z = 0;
         addClass(document.getElementById("cube-1"), "open");
         addClass(document.getElementById("cube-1"), "transitions");
-        document.getElementById("cube-1").style.transform="rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
+        setTransformOnVendors(
+            document.getElementById("cube-1"),
+            "rotateX(0deg) rotateY(0deg) rotateZ(0deg)");
         var classes = ['front', 'back', 'left', 'right', 'top', 'bottom'];
         for (var i = 0; i < classes.length; i++) {
             var divs = document.getElementsByClassName(classes[i]);
