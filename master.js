@@ -29,6 +29,7 @@ function setTransformOnVendors(div, transform) {
 }
 
 var animationEnabled = true;
+var cubeSideClickable = false;
 
 var openStatus = {};
 
@@ -45,7 +46,7 @@ function closeAll() {
 }
 
 function setState(name, state) {
-    if (state && !animationEnabled) {
+    if (state && cubeSideClickable) {
         closeAll();
         addClass(document.getElementById(name), "show");
     } else {
@@ -127,49 +128,58 @@ function foldToPlace(place) {
     }
 }
 
+var foldTimeout = null;
+
 function fold() {
-    if (!animationEnabled) {
-        var classes = ['front', 'back', 'left', 'right', 'top', 'bottom'];
-        for (var i = 0; i < classes.length; i++) {
-            var divs = document.getElementsByClassName(classes[i]);
-            for (var j = 0; j < divs.length; j++) {
-                removeClass(divs[j], "unfold");
-            }
-        }
-        removeClass(document.getElementById('cube-1'), "open");
-        closeAll();
-        removeClass(document.getElementById('close-button'), "show");
-        setTimeout(function() {
-            animationEnabled = true;
-            removeClass(document.getElementById('cube-1'), "transitions");
-        }, 2000);
+    if (foldTimeout != null) {
+        clearTimeout(foldTimeout);
+        foldTimeout = null;
     }
+    var classes = ['front', 'back', 'left', 'right', 'top', 'bottom'];
+    for (var i = 0; i < classes.length; i++) {
+        var divs = document.getElementsByClassName(classes[i]);
+        for (var j = 0; j < divs.length; j++) {
+            removeClass(divs[j], "unfold");
+        }
+    }
+    removeClass(document.getElementById('cube-1'), "open");
+    closeAll();
+    removeClass(document.getElementById('close-button'), "show");
+    cubeSideClickable = false;
+    foldTimeout = setTimeout(function() {
+        animationEnabled = true;
+        removeClass(document.getElementById('cube-1'), "transitions");
+        foldTimeout = null;
+    }, 2000);
 }
 
 function unfold() {
-    if (animationEnabled) {
-        animationEnabled = false;
-        rotations.x = Math.round(rotations.x/360)*360;
-        rotations.y = Math.round(rotations.y/360)*360;
-        rotations.z = Math.round(rotations.z/360)*360;
-        addClass(document.getElementById("cube-1"), "open");
-        addClass(document.getElementById("cube-1"), "transitions");
-        setTransformOnVendors(
-            document.getElementById("cube-1"),
-            "rotateX("+rotations.x+"deg) rotateY("+rotations.y+"deg) rotateZ("+rotations.z+"deg)");
-        var classes = ['front', 'back', 'left', 'right', 'top', 'bottom'];
-        for (var i = 0; i < classes.length; i++) {
-            var divs = document.getElementsByClassName(classes[i]);
-            for (var j = 0; j < divs.length; j++) {
-                addClass(divs[j], "unfold");
-            }
-        }
-        addClass(document.getElementById('close-button'), "show");
+    if (foldTimeout != null) {
+        clearTimeout(foldTimeout);
+        foldTimeout = null;
     }
+    animationEnabled = false;
+    cubeSideClickable = true;
+    rotations.x = Math.round(rotations.x/360)*360;
+    rotations.y = Math.round(rotations.y/360)*360;
+    rotations.z = Math.round(rotations.z/360)*360;
+    addClass(document.getElementById("cube-1"), "open");
+    addClass(document.getElementById("cube-1"), "transitions");
+    setTransformOnVendors(
+        document.getElementById("cube-1"),
+        "rotateX("+rotations.x+"deg) rotateY("+rotations.y+"deg) rotateZ("+rotations.z+"deg)");
+    var classes = ['front', 'back', 'left', 'right', 'top', 'bottom'];
+    for (var i = 0; i < classes.length; i++) {
+        var divs = document.getElementsByClassName(classes[i]);
+        for (var j = 0; j < divs.length; j++) {
+            addClass(divs[j], "unfold");
+        }
+    }
+    addClass(document.getElementById('close-button'), "show");
 }
 
 function goToLink(link) {
-    if (!animationEnabled) {
+    if (cubeSideClickable) {
         window.open(link, '_blank');
     }
 }
@@ -183,15 +193,15 @@ function getCubeState() {
 }
 
 function setCubeState(state) {
-    if (state && animationEnabled) {
+    if (state && !cubeSideClickable) {
         window.location.hash = "#!/open/";
-    } else if (!state && !animationEnabled) {
+    } else if (!state && cubeSideClickable) {
         window.location.hash = "#!/";
     }
 }
 
 function toggleHash(hash) {
-    if (!animationEnabled) {
+    if (cubeSideClickable) {
         var oldHash = getCurrentHash();
         if (oldHash != hash) {
             window.location.hash = "#!/open/"+hash;
