@@ -44,11 +44,10 @@ function closeAll() {
     }
 }
 
-function toggle(name) {
-    if (!openStatus[name] && !animationEnabled) {
+function setState(name, state) {
+    if (state && !animationEnabled) {
         closeAll();
         addClass(document.getElementById(name), "show");
-        openStatus[name] = true;
     } else {
         close(name);
     }
@@ -150,14 +149,14 @@ function fold() {
 function unfold() {
     if (animationEnabled) {
         animationEnabled = false;
-        rotations.x = 0;
-        rotations.y = 0;
-        rotations.z = 0;
+        rotations.x = Math.round(rotations.x/360)*360;
+        rotations.y = Math.round(rotations.y/360)*360;
+        rotations.z = Math.round(rotations.z/360)*360;
         addClass(document.getElementById("cube-1"), "open");
         addClass(document.getElementById("cube-1"), "transitions");
         setTransformOnVendors(
             document.getElementById("cube-1"),
-            "rotateX(0deg) rotateY(0deg) rotateZ(0deg)");
+            "rotateX("+rotations.x+"deg) rotateY("+rotations.y+"deg) rotateZ("+rotations.z+"deg)");
         var classes = ['front', 'back', 'left', 'right', 'top', 'bottom'];
         for (var i = 0; i < classes.length; i++) {
             var divs = document.getElementsByClassName(classes[i]);
@@ -174,3 +173,47 @@ function goToLink(link) {
         window.open(link, '_blank');
     }
 }
+
+function getCurrentHash() {
+    return window.location.hash.replace(/^#!\/(open\/)?/, '');
+}
+
+function getCubeState() {
+    return window.location.hash.indexOf("open/") != -1;
+}
+
+function setCubeState(state) {
+    if (state && animationEnabled) {
+        window.location.hash = "#!/open/";
+    } else if (!state && !animationEnabled) {
+        window.location.hash = "#!/";
+    }
+}
+
+function toggleHash(hash) {
+    if (!animationEnabled) {
+        var oldHash = getCurrentHash();
+        if (oldHash != hash) {
+            window.location.hash = "#!/open/"+hash;
+        } else {
+            window.location.hash = "#!/open/";
+        }
+    }
+}
+
+window.onhashchange = function() {
+    if (getCubeState()) {
+        var hash = getCurrentHash();
+        unfold();
+        if (hash == '') {
+            closeAll();
+        } else {
+            setState(hash, true);
+        }
+    } else {
+        closeAll();
+        fold();
+    }
+};
+
+window.onhashchange();

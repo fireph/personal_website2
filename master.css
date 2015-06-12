@@ -446,3 +446,95 @@ body {
   -ms-transform: translateX(-25vmin) rotateY(0deg);
   transform: translateX(-25vmin) rotateY(0deg);
 }
+.contactme-logo {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+  margin: 1vmin;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  -ms-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+.contactme-logo:hover {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.sprite {
+  background-image: url("img/social_sprites.png");
+  background-repeat: no-repeat;
+  display: block;
+  float: left;
+}
+.sprite-email {
+  width: 64px;
+  height: 64px;
+  background-position: -2px -2px;
+}
+.sprite-facebook {
+  width: 64px;
+  height: 64px;
+  background-position: -70px -2px;
+}
+.sprite-github {
+  width: 64px;
+  height: 64px;
+  background-position: -138px -2px;
+}
+.sprite-googleplus {
+  width: 64px;
+  height: 64px;
+  background-position: -2px -70px;
+}
+.sprite-instagram {
+  width: 64px;
+  height: 64px;
+  background-position: -70px -70px;
+}
+.sprite-linkedin {
+  width: 64px;
+  height: 64px;
+  background-position: -138px -70px;
+}
+.sprite-playstation {
+  width: 64px;
+  height: 64px;
+  background-position: -2px -138px;
+}
+.sprite-skype {
+  width: 64px;
+  height: 64px;
+  background-position: -70px -138px;
+}
+.sprite-soundcloud {
+  width: 64px;
+  height: 64px;
+  background-position: -138px -138px;
+}
+.sprite-stackoverflow {
+  width: 64px;
+  height: 64px;
+  background-position: -206px -2px;
+}
+.sprite-starcraft2 {
+  width: 64px;
+  height: 64px;
+  background-position: -206px -70px;
+}
+.sprite-steam {
+  width: 64px;
+  height: 64px;
+  background-position: -206px -138px;
+}
+.sprite-twitter {
+  width: 64px;
+  height: 64px;
+  background-position: -2px -206px;
+}
+.sprite-xbox {
+  width: 64px;
+  height: 64px;
+  background-position: -70px -206px;
+}
