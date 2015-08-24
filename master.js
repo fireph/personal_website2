@@ -1,3 +1,5 @@
+echo.init();
+
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
           window.webkitRequestAnimationFrame ||
@@ -45,10 +47,23 @@ function closeAll() {
     }
 }
 
+function updateEchoOverNextHalfSecond() {
+    echo.render();
+    var num = 0;
+    var interval = setInterval(function() {
+        if (num == 2) {
+            clearInterval(interval);
+        }
+        echo.render();
+        num++;
+    }, 250);
+}
+
 function setState(name, state) {
     if (state && cubeSideClickable) {
         closeAll();
         addClass(document.getElementById(name), "show");
+        updateEchoOverNextHalfSecond();
     } else {
         close(name);
     }
