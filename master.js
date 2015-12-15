@@ -30,6 +30,7 @@ function setTransformOnVendors(div, transform) {
     div.style.transform = transform;
 }
 
+var animationEnabledTime = Date.now();
 var animationEnabled = true;
 var cubeSideClickable = false;
 
@@ -77,13 +78,26 @@ var rotations = {
 
 var speed = 0.5;
 
+var modifier;
+var deltaAnimation;
+var easingTime = 1000;
+
+ function easingSin(delta, duration) {
+    return (Math.sin(-Math.PI/2 + delta/duration*Math.PI)+1)/2
+ }
+
 function rotate(delta) {
     if (animationEnabled) {
-        rotations.x += (Math.random()/5+1)*speed * (60*delta);
+        deltaAnimation = Date.now() - animationEnabledTime;
+        modifier = 1.0;
+        if (deltaAnimation <= easingTime) {
+            modifier = easingSin(deltaAnimation, easingTime);
+        }
+        rotations.x += (Math.random()/5+1)*speed*modifier * (60*delta);
         rotations.x = rotations.x % 360;
-        rotations.y += (Math.random()/5+1)*speed * (60*delta);
+        rotations.y += (Math.random()/5+1)*speed*modifier * (60*delta);
         rotations.y = rotations.y % 360;
-        rotations.z += (Math.random()/5+1)*speed * (60*delta);
+        rotations.z += (Math.random()/5+1)*speed*modifier * (60*delta);
         rotations.z = rotations.z % 360;
         setTransformOnVendors(
             document.getElementById("cube-1"),
@@ -162,6 +176,9 @@ function fold() {
     removeClass(document.getElementById('close-button'), "show");
     cubeSideClickable = false;
     foldTimeout = setTimeout(function() {
+        if (!animationEnabled) {
+            animationEnabledTime = Date.now();
+        }
         animationEnabled = true;
         removeClass(document.getElementById('cube-1'), "transitions");
         foldTimeout = null;
