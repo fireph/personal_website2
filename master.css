@@ -538,3 +538,18 @@ body {
   height: 64px;
   background-position: -70px -206px;
 }
+.sprite-overwatch {
+  width: 64px;
+  height: 64px;
+  background-position: -138px -206px;
+}
+.sprite-hots {
+  width: 64px;
+  height: 64px;
+  background-position: -206px -206px;
+}
+.sprite-d3 {
+  width: 64px;
+  height: 64px;
+  background-position: -2px -274px;
+}
