@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Frederick Meyer</title>
-        <link href="./img/favicon.ico" rel="icon" type="image/x-icon" />
+        <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="This is my personal site. Newly redesigned with CSS3D! Take a look around and check out my Github!">
         <meta name="author" content="Frederick Meyer">
@@ -16,9 +16,9 @@
         <meta property="og:image:width" content="4160"/>
         <meta property="og:image:height" content="2340"/>
 
+        <script src="csi.min.js"></script>
         <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-        <link href="master.css" rel="stylesheet">
+        <link href="/master.css" rel="stylesheet">
 
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -45,9 +45,9 @@
                         <img class="background-logo-text" src="img/myprojects.jpg">
                     </div>
                 </div>
-                <div onclick="goToLink('http://blog.fmeyer.com/')" class="cube-side top">
-                    <p class="overlay-text">My Blog</p>
-                    <img class="background-logo-text" src="img/blog.png">
+                <div onclick="toggleHash('resume-content')" class="cube-side top">
+                    <p class="overlay-text">Resume</p>
+                    <img class="background-logo-text" src="img/resume_icon.png">
                 </div>
                 <div onclick="toggleHash('contactme-content')" class="cube-side bottom">
                     <p class="overlay-text">Contact Me</p>
@@ -63,6 +63,18 @@
                     <h1>About Me</h1>
                 </div>
                 <p>Hi, I am a software engineer! I currently work at Facebook on Android development. I enjoy biking, hiking, and video games. But most of all, I love to code. I am a proficient javascript web developer (front-end and back-end), 3D graphics programmer, and Android developer. I currently strive to master the art of crafting amazing games and 3D graphics experiences.<br><br>I often go to hack-a-thons and have built some awesome projects over the years, ranging from music websites to Bash scripting. You can check out some of my favorites that I have built on my site!<br><br>Whether it is circuit prototyping or GLSL shader development, I am always up for the challenge of learning something new and honing my skills. I have honed my skills in front-end javascipt and WebGL for the past year and I am hungering for new, harder problems to sink my teeth into.</p>
+            </div>
+        </div>
+        <div id="resume-content" class="content">
+            <div class="content-container">
+                <div style="position: relative;">
+                    <img class="back-button" onclick="toggleHash('resume-content')" src="img/back-arrow.png">
+                    <img class="print-button" onclick="printResume()" src="img/print.png">
+                    <h1>Resume</h1>
+                </div>
+                <div id="resume-container">
+                    <div data-include="resume/index.html"></div>
+                </div>
             </div>
         </div>
         <div id="contactme-content" class="content">

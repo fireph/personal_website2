@@ -11,6 +11,19 @@ window.requestAnimFrame = (function(){
 
 var previousFrameTime = Date.now();
 
+function printResume() {
+    var newWindow = window.open();
+    var innerHtml = document.getElementById('resume-container').innerHTML;
+    console.log(innerHtml);
+    newWindow.document.write(innerHtml+'<style>table.resume{font-size:0.65em;}</style>');
+    
+    newWindow.document.close(); // necessary for IE >= 10
+    newWindow.focus(); // necessary for IE >= 10
+
+    newWindow.print();
+    newWindow.close();
+}
+
 function addClass(ele, cName) {
     ele.className += " "+cName;
 }
@@ -238,7 +251,7 @@ function toggleHash(hash) {
         if (oldHash != hash) {
             window.location.hash = "#!/open/"+hash;
         } else {
-            window.location.hash = "#!/open/";
+            window.history.back();
         }
     }
 }
