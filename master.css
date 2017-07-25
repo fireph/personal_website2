@@ -67,7 +67,14 @@ body {
 .content-container {
   padding: 0 2em 2em 2em;
 }
+.content-subcontainer {
+  clear: both;
+}
 .content h1 {
+  text-align: center;
+  color: #bedb39;
+}
+.content h3 {
   text-align: center;
   color: #bedb39;
 }

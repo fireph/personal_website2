@@ -52,7 +52,7 @@ function updateEchoOverNextHalfSecond() {
     echo.render();
     var num = 0;
     var interval = setInterval(function() {
-        if (num == 2) {
+        if (num == 4) {
             clearInterval(interval);
         }
         echo.render();

@@ -86,96 +86,44 @@
                 <a class="contactme-logo sprite sprite-d3" href="http://us.battle.net/d3/en/profile/DungFu-1580/" target="_blank"></a>
             </div>
         </div>
-        <div id="myprojects-content" class="content">
+        <div id="myprojects-content" class="content" onscroll="echo.render();">
             <div class="content-container">
                 <div style="position: relative;">
                     <img class="back-button" onclick="toggleHash('myprojects-content')" src="img/back-arrow.png">
                     <h1>My Projects</h1>
                 </div>
-                <div onclick="toggleHash('jello-content')" class="mosaic-img" style="background-position: 0 0;">
-                    <div class="mosaic-bg">
-                        <div class="mosaic-text">JelloSimulator</div>
-                    </div>
+                <div class="content-subcontainer">
+                    <h3>Hacker News Reader Android App</h3>
+                    <p><a href="https://github.com/DungFu/HackerNews" target="_blank"><img class="project-img" data-echo="img/hackernews.png"></a>A Hacker News reader app written for Android. The idea of this app was to take advantage of the Firebase api to allow quick and asynchronous fetching of stories/comments/etc. As a result, I use this app as my primary Hacker News reader app because it loads comments much more quickly than any other app. The simplicity of the design is also easy on the eyes and matches the original aesthetic of the Hacker News website. It is currently not on the Google Play Store just yet, but I plan on uploading it once a few more features are completed.</p>
                 </div>
-                <div onclick="toggleHash('chessnut-content')" class="mosaic-img" style="background-position: 19vmin 0;">
-                    <div class="mosaic-bg">
-                        <div class="mosaic-text">Chessnut</div>
-                    </div>
+                <div class="content-subcontainer">
+                    <h3>Global Entry Appointment Cancellation Checker</h3>
+                    <p><a href="https://github.com/DungFu/ge-cancellation-checker" target="_blank"><img class="project-img" data-echo="img/ge_cancellation_checker.png"></a>This allows you to check and set up notifications for Global Entry enrollment appointment cancellations through the Global Online Enrollment System website. It uses PhantomJS, a headless browser, to log in and report back the first available open appointment. If one is found sooner than your current appointment, it will notify you by email/sms/pushbullet. It can make changes to your account or your appointment if you want that enabled. I heavily modified the original project to enable pushbullet support, and auto booking of earlier appointments.</p>
                 </div>
-                <div onclick="toggleHash('sasstore-content')" class="mosaic-img" style="background-position: 38vmin 0;">
-                    <div class="mosaic-bg">
-                        <div class="mosaic-text">SASStore</div>
-                    </div>
+                <div class="content-subcontainer">
+                    <h3>JelloSimulator</h3>
+                    <p><a href="https://github.com/DungFu/JelloSimulator" target="_blank"><img class="project-img" data-echo="img/jello1.png"></a>This is a small hack to do jello simulation in javascript using spring grid meshes. It works pretty well but the values don't like to be messed with that much at the moment sadly. :/<br><br>You can check out the <a href="https://dungfu.github.io/JelloSimulator/demo.html">demo</a> or go to the github page directly to see the beautiful sphagetti code!<br><br>The current demo simulates a jello cube falling and colliding with a plane and rolling around a bit. The left mouse can also be clicked to "poke" the cube and cause it to wobble around a bit.<br><br>I hope you enjoy and I plan to someday fix this up to be faster and much more robust and useful!</p>
                 </div>
-                <div onclick="toggleHash('drawmyshit-content')" class="mosaic-img" style="background-position: 0 19vmin;">
-                    <div class="mosaic-bg">
-                        <div class="mosaic-text">DrawMyShit</div>
-                    </div>
+                <div class="content-subcontainer">
+                    <h3>Chessnut</h3>
+                    <p><a href="https://github.com/DungFu/chessnut" target="_blank"><img class="project-img" data-echo="img/chessnut.jpg"></a>Chess playing matchmaking website written in Node.js, MongoDB, and Three.js. This was done at a hack-a-thon with a few others friends and was our first attempt at creating a realtime game that also used Three.js to implement the 3D graphics.</p>
                 </div>
-                <div onclick="toggleHash('tree-content')" class="mosaic-img" style="background-position: 19vmin 19vmin;">
-                    <div class="mosaic-bg">
-                        <div class="mosaic-text">TreeGen.js</div>
-                    </div>
+                <div class="content-subcontainer">
+                    <h3>SASStore</h3>
+                    <p><a href="https://github.com/DungFu/SASStore" target="_blank"><img class="project-img" data-echo="img/sasstore1.png"></a>I'm sure it bugs you every day when you run out of room because using 1s and 0s as strings in place of binary in Local Storage consumes too much space. Well, now SASStore (Sticks and Stones Store) can solve this pressing issue in your life! SASStore stores binary string data in the yEnc encoding format so that it will now be 7x (soon to be closer to 8x) fewer characters to store binary data than storing 1s and 0s as strings.</p>
                 </div>
-                <div onclick="toggleHash('mantlerock-content')" class="mosaic-img" style="background-position: 38vmin 19vmin;">
-                    <div class="mosaic-bg">
-                        <div class="mosaic-text">MantleRock</div>
-                    </div>
+                <div class="content-subcontainer">
+                    <h3>DrawMyShit</h3>
+                    <p><a href="https://github.com/DungFu/DrawMyShit" target="_blank"><img class="project-img" data-echo="img/drawmyshit1.jpg"></a>Simple multiplayer drawing app for Android (with a great name).</p>
                 </div>
-            </div>
-        </div>
-        <div id="jello-content" class="content">
-            <div class="content-container">
-                <div style="position: relative;">
-                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                    <h1>JelloSimulator</h1>
+                <div class="content-subcontainer">
+                    <h3>TreeGen.js</h3>
+                    <p><a href="https://github.com/DungFu/TreeGen.js" target="_blank"><img class="project-img" data-echo="img/trees.jpg"></a>This is a new and revolutionary tree generation library that uses complex and sophisticated fractal mathematics to create realistic trees in WebGL using THREE.js and TWEEN.js.</p>
                 </div>
-                <p><a href="https://github.com/DungFu/JelloSimulator" target="_blank"><img class="project-img" data-echo="img/jello1.png"></a>This is a small hack to do jello simulation in javascript using spring grid meshes. It works pretty well but the values don't like to be messed with that much at the moment sadly. :/<br><br>You can check out the <a href="https://dungfu.github.io/JelloSimulator/demo.html">demo</a> or go to the github page directly to see the beautiful sphagetti code!<br><br>The current demo simulates a jello cube falling and colliding with a plane and rolling around a bit. The left mouse can also be clicked to "poke" the cube and cause it to wobble around a bit.<br><br>I hope you enjoy and I plan to someday fix this up to be faster and much more robust and useful!</p>
-            </div>
-        </div>
-        <div id="chessnut-content" class="content">
-            <div class="content-container">
-                <div style="position: relative;">
-                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                    <h1>Chessnut</h1>
+                <div class="content-subcontainer">
+                    <h3>MantleRock</h3>
+                    <p><a href="https://github.com/DungFu/MantleRock2" target="_blank"><img class="project-img" data-echo="img/mantlerock1.png"></a>This is a mini clone of Hearthstone in the web browser. Currently only basic minions work in the game and attacking functions. It also does matchmaking!</p>
                 </div>
-                <p><a href="https://github.com/DungFu/chessnut" target="_blank"><img class="project-img" data-echo="img/chessnut.jpg"></a>Chess playing matchmaking website written in Node.js, MongoDB, and Three.js.</p>
-            </div>
-        </div>
-        <div id="sasstore-content" class="content">
-            <div class="content-container">
-                <div style="position: relative;">
-                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                    <h1>SASStore</h1>
-                </div>
-                <p><a href="https://github.com/DungFu/SASStore" target="_blank"><img class="project-img" data-echo="img/sasstore1.png"></a>I'm sure it bugs you every day when you run out of room because using 1s and 0s as strings in place of binary in Local Storage consumes too much space. Well, now SASStore (Sticks and Stones Store) can solve this pressing issue in your life! SASStore stores binary string data in the yEnc encoding format so that it will now be 7x (soon to be closer to 8x) fewer characters to store binary data than storing 1s and 0s as strings.</p>
-            </div>
-        </div>
-        <div id="drawmyshit-content" class="content">
-            <div class="content-container">
-                <div style="position: relative;">
-                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                    <h1>DrawMyShit</h1>
-                </div>
-                <p><a href="https://github.com/DungFu/DrawMyShit" target="_blank"><img class="project-img" data-echo="img/drawmyshit1.jpg"></a>Simple multiplayer drawing app for Android.</p>
-            </div>
-        </div>
-        <div id="tree-content" class="content">
-            <div class="content-container">
-                <div style="position: relative;">
-                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                    <h1>TreeGen.js</h1>
-                </div>
-                <p><a href="https://github.com/DungFu/TreeGen.js" target="_blank"><img class="project-img" data-echo="img/trees.jpg"></a>This is a new and revolutionary tree generation library that uses complex and sophisticated fractal mathematics to create realistic trees in WebGL using THREE.js and TWEEN.js.</p>
-            </div>
-        </div>
-        <div id="mantlerock-content" class="content">
-            <div class="content-container">
-                <div style="position: relative;">
-                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                    <h1>MantleRock</h1>
-                </div>
-                <p><a href="https://github.com/DungFu/MantleRock2" target="_blank"><img class="project-img" data-echo="img/mantlerock1.png"></a>This is a mini clone of Hearthstone in the web browser. Currently only basic minions work in the game and attacking functions. It also does matchmaking!</p>
             </div>
         </div>
         <script src="echo.min.js"></script>
