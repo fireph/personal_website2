@@ -58,13 +58,19 @@
         <img id="close-button" onclick="setCubeState(false)" src="img/close_button.png">
         <div id="about-content" class="content">
             <div class="content-container">
-                <h1>About Me</h1>
+                <div style="position: relative;">
+                    <img class="back-button" onclick="toggleHash('about-content')" src="img/back-arrow.png">
+                    <h1>About Me</h1>
+                </div>
                 <p>Hi, I am a software engineer! I currently work at Facebook on Android development. I enjoy biking, hiking, and video games. But most of all, I love to code. I am a proficient javascript web developer (front-end and back-end), 3D graphics programmer, and Android developer. I currently strive to master the art of crafting amazing games and 3D graphics experiences.<br><br>I often go to hack-a-thons and have built some awesome projects over the years, ranging from music websites to Bash scripting. You can check out some of my favorites that I have built on my site!<br><br>Whether it is circuit prototyping or GLSL shader development, I am always up for the challenge of learning something new and honing my skills. I have honed my skills in front-end javascipt and WebGL for the past year and I am hungering for new, harder problems to sink my teeth into.</p>
             </div>
         </div>
         <div id="contactme-content" class="content">
             <div class="content-container">
-                <h1>Contact Me</h1>
+                <div style="position: relative;">
+                    <img class="back-button" onclick="toggleHash('contactme-content')" src="img/back-arrow.png">
+                    <h1>Contact Me</h1>
+                </div>
                 <a class="contactme-logo sprite sprite-googleplus" href="https://plus.google.com/+FrederickMeyerZeek" target="_blank"></a>
                 <a class="contactme-logo sprite sprite-facebook" href="https://www.facebook.com/freddie.meyer" target="_blank"></a>
                 <a class="contactme-logo sprite sprite-skype" href="skype:ultra_dungfu?userinfo" target="_blank"></a>
@@ -81,76 +87,94 @@
             </div>
         </div>
         <div id="myprojects-content" class="content">
-            <div onclick="toggleHash('jello-content')" class="mosaic-img" style="background-position: 0 0;">
-                <div class="mosaic-bg">
-                    <div class="mosaic-text">JelloSimulator</div>
+            <div class="content-container">
+                <div style="position: relative;">
+                    <img class="back-button" onclick="toggleHash('myprojects-content')" src="img/back-arrow.png">
+                    <h1>My Projects</h1>
                 </div>
-            </div>
-            <div onclick="toggleHash('chessnut-content')" class="mosaic-img" style="background-position: 19vmin 0;">
-                <div class="mosaic-bg">
-                    <div class="mosaic-text">Chessnut</div>
+                <div onclick="toggleHash('jello-content')" class="mosaic-img" style="background-position: 0 0;">
+                    <div class="mosaic-bg">
+                        <div class="mosaic-text">JelloSimulator</div>
+                    </div>
                 </div>
-            </div>
-            <div onclick="toggleHash('sasstore-content')" class="mosaic-img" style="background-position: 38vmin 0;">
-                <div class="mosaic-bg">
-                    <div class="mosaic-text">SASStore</div>
+                <div onclick="toggleHash('chessnut-content')" class="mosaic-img" style="background-position: 19vmin 0;">
+                    <div class="mosaic-bg">
+                        <div class="mosaic-text">Chessnut</div>
+                    </div>
                 </div>
-            </div>
-            <div onclick="toggleHash('drawmyshit-content')" class="mosaic-img" style="background-position: 0 19vmin;">
-                <div class="mosaic-bg">
-                    <div class="mosaic-text">DrawMyShit</div>
+                <div onclick="toggleHash('sasstore-content')" class="mosaic-img" style="background-position: 38vmin 0;">
+                    <div class="mosaic-bg">
+                        <div class="mosaic-text">SASStore</div>
+                    </div>
                 </div>
-            </div>
-            <div onclick="toggleHash('tree-content')" class="mosaic-img" style="background-position: 19vmin 19vmin;">
-                <div class="mosaic-bg">
-                    <div class="mosaic-text">TreeGen.js</div>
+                <div onclick="toggleHash('drawmyshit-content')" class="mosaic-img" style="background-position: 0 19vmin;">
+                    <div class="mosaic-bg">
+                        <div class="mosaic-text">DrawMyShit</div>
+                    </div>
                 </div>
-            </div>
-            <div onclick="toggleHash('mantlerock-content')" class="mosaic-img" style="background-position: 38vmin 19vmin;">
-                <div class="mosaic-bg">
-                    <div class="mosaic-text">MantleRock</div>
+                <div onclick="toggleHash('tree-content')" class="mosaic-img" style="background-position: 19vmin 19vmin;">
+                    <div class="mosaic-bg">
+                        <div class="mosaic-text">TreeGen.js</div>
+                    </div>
+                </div>
+                <div onclick="toggleHash('mantlerock-content')" class="mosaic-img" style="background-position: 38vmin 19vmin;">
+                    <div class="mosaic-bg">
+                        <div class="mosaic-text">MantleRock</div>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="jello-content" class="content">
             <div class="content-container">
-                <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                <h1>JelloSimulator</h1>
+                <div style="position: relative;">
+                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
+                    <h1>JelloSimulator</h1>
+                </div>
                 <p><a href="https://github.com/DungFu/JelloSimulator" target="_blank"><img class="project-img" data-echo="img/jello1.png"></a>This is a small hack to do jello simulation in javascript using spring grid meshes. It works pretty well but the values don't like to be messed with that much at the moment sadly. :/<br><br>You can check out the <a href="https://dungfu.github.io/JelloSimulator/demo.html">demo</a> or go to the github page directly to see the beautiful sphagetti code!<br><br>The current demo simulates a jello cube falling and colliding with a plane and rolling around a bit. The left mouse can also be clicked to "poke" the cube and cause it to wobble around a bit.<br><br>I hope you enjoy and I plan to someday fix this up to be faster and much more robust and useful!</p>
             </div>
         </div>
         <div id="chessnut-content" class="content">
             <div class="content-container">
-                <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                <h1>Chessnut</h1>
+                <div style="position: relative;">
+                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
+                    <h1>Chessnut</h1>
+                </div>
                 <p><a href="https://github.com/DungFu/chessnut" target="_blank"><img class="project-img" data-echo="img/chessnut.jpg"></a>Chess playing matchmaking website written in Node.js, MongoDB, and Three.js.</p>
             </div>
         </div>
         <div id="sasstore-content" class="content">
             <div class="content-container">
-                <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                <h1>SASStore</h1>
+                <div style="position: relative;">
+                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
+                    <h1>SASStore</h1>
+                </div>
                 <p><a href="https://github.com/DungFu/SASStore" target="_blank"><img class="project-img" data-echo="img/sasstore1.png"></a>I'm sure it bugs you every day when you run out of room because using 1s and 0s as strings in place of binary in Local Storage consumes too much space. Well, now SASStore (Sticks and Stones Store) can solve this pressing issue in your life! SASStore stores binary string data in the yEnc encoding format so that it will now be 7x (soon to be closer to 8x) fewer characters to store binary data than storing 1s and 0s as strings.</p>
             </div>
         </div>
         <div id="drawmyshit-content" class="content">
             <div class="content-container">
-                <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                <h1>DrawMyShit</h1>
+                <div style="position: relative;">
+                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
+                    <h1>DrawMyShit</h1>
+                </div>
                 <p><a href="https://github.com/DungFu/DrawMyShit" target="_blank"><img class="project-img" data-echo="img/drawmyshit1.jpg"></a>Simple multiplayer drawing app for Android.</p>
             </div>
         </div>
         <div id="tree-content" class="content">
             <div class="content-container">
-                <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                <h1>TreeGen.js</h1>
+                <div style="position: relative;">
+                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
+                    <h1>TreeGen.js</h1>
+                </div>
                 <p><a href="https://github.com/DungFu/TreeGen.js" target="_blank"><img class="project-img" data-echo="img/trees.jpg"></a>This is a new and revolutionary tree generation library that uses complex and sophisticated fractal mathematics to create realistic trees in WebGL using THREE.js and TWEEN.js.</p>
             </div>
         </div>
         <div id="mantlerock-content" class="content">
             <div class="content-container">
-                <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
-                <h1>MantleRock</h1>
+                <div style="position: relative;">
+                    <img class="back-button" src="img/back-arrow.png" onclick="toggleHash('myprojects-content')">
+                    <h1>MantleRock</h1>
+                </div>
                 <p><a href="https://github.com/DungFu/MantleRock2" target="_blank"><img class="project-img" data-echo="img/mantlerock1.png"></a>This is a mini clone of Hearthstone in the web browser. Currently only basic minions work in the game and attacking functions. It also does matchmaking!</p>
             </div>
         </div>
