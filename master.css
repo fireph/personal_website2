@@ -50,6 +50,7 @@ body {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
+  outline: 1px solid #bfbfbf;
   -webkit-transition: top 1s ease, opacity 1s ease;
   -moz-transition: top 1s ease, opacity 1s ease;
   -o-transition: top 1s ease, opacity 1s ease;
