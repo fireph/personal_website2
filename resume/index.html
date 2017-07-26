@@ -16,6 +16,12 @@
       -webkit-print-color-adjust: exact;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
     table.resume {
       font-family: Arial,serif;
       font-size: 0.9em;
@@ -91,34 +97,34 @@
     <table cellspacing="0" cellpadding="0" class="resume">
       <tr class="title-row-first">
         <th>
-            <span class="title">Frederick</span><br>
+            <span class="title">Frederick</span>
         </th>
         <th class="green-background">
-            <span class="title">MEYER</span><br>
+            <span class="title">MEYER</span>
         </th> 
       </tr>
       <tr>
         <th>
-            <span class="subtitle">Software Engineer</span><br>
+            <span class="subtitle">Software Engineer</span>
         </th>
         <th class="green-background">
-            <span class="subtitle">62 Duane Street Apt. 107</span><br>
+            <span class="subtitle">62 Duane Street Apt. 107</span>
         </th> 
       </tr>
       <tr>
         <th>
-            <span class="subtitle">3D Graphics Hacker</span><br>
+            <span class="subtitle">3D Graphics Hacker</span>
         </th>
         <th class="green-background">
-            <span class="subtitle">Redwood City, CA 94062</span><br>
+            <span class="subtitle">Redwood City, CA 94062</span>
         </th> 
       </tr>
       <tr>
         <th>
-            <span>Bachelor’s UC Berkeley 2013</span><br>
+            <span>Bachelor’s UC Berkeley 2013</span>
         </th>
         <th class="green-background">
-            <span>831.588.2981</span><br>
+            <a href="tel:+1-831-588-2981">831.588.2981</a>
         </th> 
       </tr>
       <tr class="title-row-last">
@@ -126,7 +132,7 @@
             <span>Electrical Engineering and Computer Science</span>
         </th>
         <th class="green-background">
-            <span>freddiemeyer@gmail.com</span>
+            <a href="mailto:freddiemeyer@gmail.com">freddiemeyer@gmail.com</a>
         </th> 
       </tr>
       <tr>
@@ -157,14 +163,14 @@
       </tr>
       <tr>
         <td rowspan="3">
-            <p><span class="content-title">Hacker News Reader Android App (2017)</span><br>Designed to take advantage of the Firebase api to allow quick and asynchronous fetching of stories/comments/etc. I use this app as my primary Hacker News reader app because it loads comments quickly and the design matches the original aesthetic of Hacker News. Not on the Google Play Store yet, but I plan on uploading it once a few more features are completed.<br>Code is on github: https://github.com/DungFu/HackerNews</p>
-            <p><span class="content-title">Global Entry Appointment Cancellation Checker (2017)</span><br>This allows you to check and set up notifications for Global Entry enrollment appointment cancellations through the Global Online Enrollment System website. It uses PhantomJS, a headless browser, to log in and report back the first available open appointment. If one is found sooner than your current appointment, it will notify you by email/sms/pushbullet. It can make changes to your account or your appointment if you want that enabled. I heavily modified the original project to enable pushbullet support, and auto booking of earlier appointments.<br>Code is on github: https://github.com/DungFu/ge-cancellation-checker</p>
-            <p><span class="content-title">Jello Simulator (2013)</span><br>A spring mesh simulation of jello-like material. This was done at a hackathon to learn how spring mesh simulations are done and as a personal challenge to see if I could actually complete it in such a short time.<br>Code is on github: https://github.com/DungFu/JelloSimulator</p>
-            <p><span class="content-title">Chessnut (2012+)</span><br>A matchmaking site for playing chess. Full webGL functionality written using Three.js and Node.JS.<br>Website: http://chessnut.fmeyer.com</p>
-            <p><span class="content-title">SASStore (2013)</span><br>A small fun hack that enables binary storage using base 64 encoding using local storage in the browser.<br>Code is on github: https://github.com/DungFu/SASStore</p>
-            <p><span class="content-title">Nowtable (2011)</span><br>One of my first hackathon projects. A website built upon node.js and nowjs that<br>enables a real-time collaborative music playing experience. We have been given offers by other companies to use our code.<br>Code is on github: https://github.com/DungFu/Nowtable</p>
-            <p><span class="content-title">ClassOverflow (2013+)</span><br>A way to dynamically run code for class projects using Docker. The backend server is written in Node.js and the front-end uses Angular.js.<br>Code is on github: https://github.com/DungFu/ClassOverflow</p>
-            <p><span class="content-title">Node Boilerplate (2013+)</span><br>A convenient boilerplate setup for getting a Node.js site up and running quickly with some backend niceties already built in.<br>Code is on github: https://github.com/DungFu/node_boilerplate</p>
+            <p><span class="content-title">Hacker News Reader Android App (2017)</span><br>Designed to take advantage of the Firebase api to allow quick and asynchronous fetching of stories/comments/etc. I use this app as my primary Hacker News reader app because it loads comments quickly and the design matches the original aesthetic of Hacker News. Not on the Google Play Store yet, but I plan on uploading it once a few more features are completed.<br>Code is on github: <a target="_blank" href="https://github.com/DungFu/HackerNews">github.com/DungFu/HackerNews</a></p>
+            <p><span class="content-title">Global Entry Appointment Cancellation Checker (2017)</span><br>This allows you to check and set up notifications for Global Entry enrollment appointment cancellations through the Global Online Enrollment System website. It uses PhantomJS, a headless browser, to log in and report back the first available open appointment. If one is found sooner than your current appointment, it will notify you by email/sms/pushbullet. It can make changes to your account or your appointment if you want that enabled. I heavily modified the original project to enable pushbullet support, and auto booking of earlier appointments.<br>Code is on github: <a target="_blank" href="https://github.com/DungFu/ge-cancellation-checker">github.com/DungFu/ge-cancellation-checker</a></p>
+            <p><span class="content-title">Jello Simulator (2013)</span><br>A spring mesh simulation of jello-like material. This was done at a hackathon to learn how spring mesh simulations are done and as a personal challenge to see if I could actually complete it in such a short time.<br>Code is on github: <a target="_blank" href="https://github.com/DungFu/JelloSimulator">github.com/DungFu/JelloSimulator</a></p>
+            <p><span class="content-title">Chessnut (2012+)</span><br>A matchmaking site for playing chess. Full webGL functionality written using Three.js and Node.JS.<br>Website: <a target="_blank" href="https://github.com/DungFu/chessnut">github.com/DungFu/chessnut</a></p>
+            <p><span class="content-title">SASStore (2013)</span><br>A small fun hack that enables binary storage using base 64 encoding using local storage in the browser.<br>Code is on github: <a target="_blank" href="https://github.com/DungFu/SASStore">github.com/DungFu/SASStore</a></p>
+            <p><span class="content-title">Nowtable (2011)</span><br>One of my first hackathon projects. A website built upon node.js and nowjs that<br>enables a real-time collaborative music playing experience. We have been given offers by other companies to use our code.<br>Code is on github: <a target="_blank" href="https://github.com/DungFu/Nowtable">github.com/DungFu/Nowtable</a></p>
+            <p><span class="content-title">ClassOverflow (2013+)</span><br>A way to dynamically run code for class projects using Docker. The backend server is written in Node.js and the front-end uses Angular.js.<br>Code is on github: <a target="_blank" href="https://github.com/DungFu/ClassOverflow">github.com/DungFu/ClassOverflow</a></p>
+            <p><span class="content-title">Node Boilerplate (2013+)</span><br>A convenient boilerplate setup for getting a Node.js site up and running quickly with some backend niceties already built in.<br>Code is on github: <a target="_blank" href="https://github.com/DungFu/node_boilerplate">github.com/DungFu/node_boilerplate</a></p>
         </td>
         <td class="green-background">
             <p><span class="content-title">2010</span><br>Back-end Web developer for Wired In.</p>
@@ -179,7 +185,7 @@
       </tr>
       <tr class="green-background">
         <td>
-            <p>Hackers @ Berkeley (2012-2013)<br>http://hackersatberkeley.com</p>
+            <p>Hackers @ Berkeley (2012-2013)<br><a target="_blank" href="http://hackersatberkeley.com">hackersatberkeley.com</a></p>
             <p>HackJam (2012) - 12 hour programming competition.<br>Created WebGL app with physics.</p>
             <p>General Class Licensed amateur radio operator; KG6ECE (2000-Present)</p>
             <p>Loma Pioneers Amateur Radio Club (2003-Present)</p>
