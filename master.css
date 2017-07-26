@@ -32,6 +32,7 @@ body {
   -o-transition: opacity 1s ease;
   -ms-transition: opacity 1s ease;
   transition: opacity 1s ease;
+  cursor: auto;
 }
 #close-button.show {
   opacity: 1;
@@ -42,10 +43,15 @@ body {
 .content {
   overflow: auto;
   position: absolute;
-  left: 0;
   top: 100%;
-  right: 0;
   bottom: 0;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   background-color: #fff;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -56,6 +62,7 @@ body {
   -o-transition: top 1s ease, opacity 1s ease;
   -ms-transition: top 1s ease, opacity 1s ease;
   transition: top 1s ease, opacity 1s ease;
+  max-width: 1024px;
 }
 .content.show {
   opacity: 1;

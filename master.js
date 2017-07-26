@@ -251,8 +251,14 @@ function toggleHash(hash) {
         if (oldHash != hash) {
             window.location.hash = "#!/open/"+hash;
         } else {
-            window.history.back();
+            window.location.hash = "#!/open/";
         }
+    }
+}
+
+function removeHash() {
+    if (cubeSideClickable) {
+        window.location.hash = "#!/open/";
     }
 }
 

@@ -27,6 +27,7 @@ body {
     width: 5vmin;
     height: 5vmin;
     transition: opacity 1s ease;
+    cursor: auto;
 }
 
 #close-button.show {
@@ -37,14 +38,16 @@ body {
 .content {
     overflow: auto;
     position: absolute;
-    left: 0;
     top: 100%;
-    right: 0;
     bottom: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
     background-color: #ffffff;
     opacity: 0.0;
     outline: 1px solid #BFBFBF;
     transition: top 1s ease, opacity 1s ease;
+    max-width: 1024px;
 }
 
 .content.show {
