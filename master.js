@@ -51,6 +51,7 @@ var openStatus = {};
 
 function close(name) {
     removeClass(document.getElementById(name), "show");
+    removeClass(document.getElementById("fading-overlay"), "show");
     openStatus[name] = false;
 }
 
@@ -77,6 +78,7 @@ function setState(name, state) {
     if (state && cubeSideClickable) {
         closeAll();
         addClass(document.getElementById(name), "show");
+        addClass(document.getElementById("fading-overlay"), "show");
         updateEchoOverNextHalfSecond();
     } else {
         close(name);

@@ -40,6 +40,29 @@ body {
   filter: none;
   cursor: pointer;
 }
+#fading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  -ms-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+#fading-overlay.show {
+  opacity: 0.75;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+  filter: alpha(opacity=75);
+  pointer-events: auto;
+}
 .content {
   overflow: auto;
   position: absolute;
@@ -433,7 +456,7 @@ body {
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
   filter: alpha(opacity=60);
-  margin: 1vmin;
+  margin: 8px;
   -webkit-transition: opacity 0.2s ease;
   -moz-transition: opacity 0.2s ease;
   -o-transition: opacity 0.2s ease;
@@ -448,8 +471,7 @@ body {
 .sprite {
   background-image: url("img/sprites.png");
   background-repeat: no-repeat;
-  display: block;
-  float: left;
+  display: inline-block;
 }
 .sprite-email {
   width: 64px;
