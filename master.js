@@ -280,3 +280,14 @@ window.onhashchange = function() {
 };
 
 window.onhashchange();
+
+window.onkeyup = function(evt) {
+    evt = evt || window.event;
+    if (evt.keyCode == 27) {
+        if (window.location.hash === "#!/open/") {
+            setCubeState(false);
+        } else {
+            removeHash();
+        }
+    }
+};
