@@ -1,0 +1,29 @@
+{
+  "name": "personal_website2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-rename": "^0.1.4",
+    "grunt-replace": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DungFu/personal_website2.git"
+  },
+  "author": "Frederick Meyer dungfu3@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DungFu/personal_website2/issues"
+  },
+  "homepage": "www.fmeyer.com"
+}

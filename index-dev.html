@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Frederick Meyer</title>
+        <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This is my personal site. Newly redesigned with CSS3D! Take a look around and check out my Github!">
+        <meta name="author" content="Frederick Meyer">
+        <meta property="og:site_name" content="Frederick Meyer"/>
+        <meta property="og:title" content="Frederick Meyer"/>
+        <meta property="og:description" content="This is my personal site. Newly redesigned with CSS3D! Take a look around and check out my Github!"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="http://www.fmeyer.com"/>
+        <meta property="og:image" content="http://www.fmeyer.com/img/share_pic.jpg"/>
+        <meta property="og:image:width" content="4160"/>
+        <meta property="og:image:height" content="2340"/>
+
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <!--build-css-start-->
+        <link href="/master.css" rel="stylesheet">
+        <!--build-css-end-->
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+        <div class="viewport">
+            <div onclick="setCubeState(true)" id="cube-1" class="cube">
+                <div onclick="goToLink('https://github.com/DungFu')" class="cube-side front">
+                    <img class="background-logo-small" src="img/github.png">
+                </div>
+                <div onclick="toggleHash('about-content')" class="cube-side left">
+                    <p class="overlay-text">About Me</p>
+                    <img class="background-logo-text" src="img/profile_pic.jpg">
+                </div>
+                <div class="right">
+                    <div onclick="goToLink('https://www.linkedin.com/in/meyerfrederick/')" class="cube-side back">
+                        <img class="background-logo-xsmall" src="img/li_icon.png">
+                    </div>
+                    <div onclick="toggleHash('myprojects-content')" class="cube-side">
+                        <p class="overlay-text">My Projects</p>
+                        <img class="background-logo-text" src="img/myprojects.jpg">
+                    </div>
+                </div>
+                <div onclick="toggleHash('resume-content')" class="cube-side top">
+                    <p class="overlay-text">Resume</p>
+                    <img class="background-logo-text" src="img/resume_icon.png">
+                </div>
+                <div onclick="toggleHash('contactme-content')" class="cube-side bottom">
+                    <p class="overlay-text">Contact Me</p>
+                    <img class="background-logo-text" src="img/email.png">
+                </div>
+            </div>
+        </div>
+        <img id="close-button" onclick="setCubeState(false)" src="img/close_button.png">
+        <div id="fading-overlay" onclick="removeHash()"></div>
+        <div id="about-content" class="content">
+            <div class="content-container">
+                <div style="position: relative;">
+                    <img class="back-button" onclick="removeHash()" src="img/back-arrow.png">
+                    <h1>About Me</h1>
+                </div>
+                <p>Hi, I am a software engineer! I currently work at Facebook on Android development. I enjoy biking, hiking, and video games. But most of all, I love to code. I am a proficient javascript web developer (front-end and back-end), 3D graphics programmer, and Android developer. I currently strive to master the art of crafting amazing games and 3D graphics experiences.<br><br>I often go to hack-a-thons and have built some awesome projects over the years, ranging from music websites to Bash scripting. You can check out some of my favorites that I have built on my site!<br><br>Whether it is circuit prototyping or GLSL shader development, I am always up for the challenge of learning something new and honing my skills. I have honed my skills in front-end javascipt and WebGL for the past year and I am hungering for new, harder problems to sink my teeth into.</p>
+            </div>
+        </div>
+        <div id="resume-content" class="content">
+            <div class="content-container">
+                <div style="position: relative;">
+                    <img class="back-button" onclick="removeHash()" src="img/back-arrow.png">
+                    <img class="print-button" onclick="printResume()" src="img/print.png">
+                    <h1>Resume</h1>
+                </div>
+                <div id="resume-container">
+                    <!--build-resume-start-->
+                    <div data-include="resume/index.html"></div>
+                    <!--build-resume-end-->
+                </div>
+            </div>
+        </div>
+        <div id="contactme-content" class="content">
+            <div class="content-container">
+                <div style="position: relative;">
+                    <img class="back-button" onclick="removeHash()" src="img/back-arrow.png">
+                    <h1>Contact Me</h1>
+                </div>
+                <div style="text-align: center">
+                    <a class="contactme-logo sprite sprite-googleplus" href="https://plus.google.com/+FrederickMeyerZeek" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-facebook" href="https://www.facebook.com/freddie.meyer" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-skype" href="skype:ultra_dungfu?userinfo" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-email" href="mailto:freddiemeyer@gmail.com" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-instagram" href="https://instagram.com/steaddie/" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-twitter" href="https://twitter.com/FredJMeyer" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-steam" href="https://steamcommunity.com/id/dungfu" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-xbox" href="https://account.xbox.com/en-US/Profile?gamerTag=DungFu2" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-playstation" href="http://psnprofiles.com/DungFu" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-hots" href="http://www.hotslogs.com/Player/Profile?PlayerID=6103949" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-overwatch" href="https://playoverwatch.com/en-us/career/pc/us/DungFu-1580" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-starcraft2" href="http://us.battle.net/sc2/en/profile/2596464/1/DungFu/" target="_blank"></a>
+                    <a class="contactme-logo sprite sprite-d3" href="http://us.battle.net/d3/en/profile/DungFu-1580/" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <div id="myprojects-content" class="content" onscroll="echo.render();">
+            <div class="content-container">
+                <div style="position: relative;">
+                    <img class="back-button" onclick="removeHash()" src="img/back-arrow.png">
+                    <h1>My Projects</h1>
+                </div>
+                <div class="content-subcontainer">
+                    <h3>Hacker News Reader Android App</h3>
+                    <p>
+                        <a class="project-img-wrap hackernews" href="https://github.com/DungFu/HackerNews" target="_blank">
+                            <img class="project-img" data-echo="img/projects/hackernews.png">
+                        </a>
+                        A Hacker News reader app written for Android. The idea of this app was to take advantage of the Firebase api to allow quick and asynchronous fetching of stories/comments/etc. As a result, I use this app as my primary Hacker News reader app because it loads comments much more quickly than any other app. The simplicity of the design is also easy on the eyes and matches the original aesthetic of the Hacker News website. It is currently not on the Google Play Store just yet, but I plan on uploading it once a few more features are completed.
+                    </p>
+                </div>
+                <div class="content-subcontainer">
+                    <h3>Global Entry Appointment Cancellation Checker</h3>
+                    <p>
+                        <a class="project-img-wrap ge-cancellation-checker" href="https://github.com/DungFu/ge-cancellation-checker" target="_blank">
+                            <img class="project-img" data-echo="img/projects/ge-cancellation-checker.png">
+                        </a>
+                        This allows you to check and set up notifications for Global Entry enrollment appointment cancellations through the Global Online Enrollment System website. It uses PhantomJS, a headless browser, to log in and report back the first available open appointment. If one is found sooner than your current appointment, it will notify you by email/sms/pushbullet. It can make changes to your account or your appointment if you want that enabled. I heavily modified the original project to enable pushbullet support, and auto booking of earlier appointments.
+                    </p>
+                </div>
+                <div class="content-subcontainer">
+                    <h3>TrafficSweetSpot</h3>
+                    <p>
+                        <a class="project-img-wrap trafficsweetspot" href="https://github.com/DungFu/TrafficSweetSpot" target="_blank">
+                            <img class="project-img" data-echo="img/projects/trafficsweetspot.png">
+                        </a>
+                        This is simple Mac status bar app that can give driving times between two places. It will track the driving time in a graph so that you can see the historical data for your route. I use it to track my commute and know the best time to leave the office!
+                    </p>
+                </div>
+                <div class="content-subcontainer">
+                    <h3>JelloSimulator</h3>
+                    <p>
+                        <a class="project-img-wrap jello" href="https://github.com/DungFu/JelloSimulator" target="_blank">
+                            <img class="project-img" data-echo="img/projects/jello.png">
+                        </a>
+                        This is a small hack to do jello simulation in javascript using spring grid meshes. It works pretty well but the values don't like to be messed with that much at the moment sadly. :/<br><br>You can check out the <a href="https://dungfu.github.io/JelloSimulator/demo.html">demo</a> or go to the github page directly to see the beautiful sphagetti code!<br><br>The current demo simulates a jello cube falling and colliding with a plane and rolling around a bit. The left mouse can also be clicked to "poke" the cube and cause it to wobble around a bit.<br><br>I hope you enjoy and I plan to someday fix this up to be faster and much more robust and useful!
+                    </p>
+                </div>
+                <div class="content-subcontainer">
+                    <h3>Chessnut</h3>
+                    <p>
+                        <a class="project-img-wrap chessnut" href="https://github.com/DungFu/chessnut" target="_blank">
+                            <img class="project-img" data-echo="img/projects/chessnut.jpg">
+                        </a>
+                        Chess playing matchmaking website written in Node.js, MongoDB, and Three.js. This was done at a hack-a-thon with a few others friends and was our first attempt at creating a realtime game that also used Three.js to implement the 3D graphics.
+                    </p>
+                </div>
+                <div class="content-subcontainer">
+                    <h3>SASStore</h3>
+                    <p>
+                        <a class="project-img-wrap sasstore" href="https://github.com/DungFu/SASStore" target="_blank">
+                            <img class="project-img" data-echo="img/projects/sasstore.png">
+                        </a>
+                        I'm sure it bugs you every day when you run out of room because using 1s and 0s as strings in place of binary in Local Storage consumes too much space. Well, now SASStore (Sticks and Stones Store) can solve this pressing issue in your life! SASStore stores binary string data in the yEnc encoding format so that it will now be 7x (soon to be closer to 8x) fewer characters to store binary data than storing 1s and 0s as strings.
+                    </p>
+                </div>
+                <div class="content-subcontainer">
+                    <h3>DrawMyShit</h3>
+                    <p>
+                        <a class="project-img-wrap drawmyshit" href="https://github.com/DungFu/DrawMyShit" target="_blank">
+                            <img class="project-img" data-echo="img/projects/drawmyshit.jpg">
+                        </a>Simple multiplayer drawing app for Android (with a great name).
+                    </p>
+                </div>
+                <div class="content-subcontainer">
+                    <h3>TreeGen.js</h3>
+                    <p>
+                        <a class="project-img-wrap trees" href="https://github.com/DungFu/TreeGen.js" target="_blank">
+                            <img class="project-img" data-echo="img/projects/trees.jpg">
+                        </a>
+                        This is a new and revolutionary tree generation library that uses complex and sophisticated fractal mathematics to create realistic trees in WebGL using THREE.js and TWEEN.js.
+                    </p>
+                </div>
+                <div class="content-subcontainer">
+                    <h3>MantleRock</h3>
+                    <p>
+                        <a class="project-img-wrap mantlerock" href="https://github.com/DungFu/MantleRock2" target="_blank">
+                            <img class="project-img" data-echo="img/projects/mantlerock.jpg">
+                        </a>
+                        This is a mini clone of Hearthstone in the web browser. Currently only basic minions work in the game and attacking functions. It also does matchmaking!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--build-js-start-->
+        <script src="csi.min.js"></script>
+        <script src="echo.min.js"></script>
+        <script src="master.js"></script>
+        <!--build-js-end-->
+    </body>
+</html>
