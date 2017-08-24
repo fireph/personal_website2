@@ -173,6 +173,33 @@ body {
   -webkit-box-shadow: 0 0 10px 0 rgba(138,9,23,0.5);
   box-shadow: 0 0 10px 0 rgba(138,9,23,0.5);
 }
+.project-img-wrap.hackernews {
+  padding-top: 58.666666666666664%;
+}
+.project-img-wrap.ge-cancellation-checker {
+  padding-top: 20.018382352941174%;
+}
+.project-img-wrap.trafficsweetspot {
+  padding-top: 38.23018867924528%;
+}
+.project-img-wrap.jello {
+  padding-top: 23.803278688524593%;
+}
+.project-img-wrap.chessnut {
+  padding-top: 24.75%;
+}
+.project-img-wrap.sasstore {
+  padding-top: 16.81853281853282%;
+}
+.project-img-wrap.drawmyshit {
+  padding-top: 29.1328125%;
+}
+.project-img-wrap.trees {
+  padding-top: 24.75%;
+}
+.project-img-wrap.mantlerock {
+  padding-top: 17.82%;
+}
 .back-button {
   cursor: pointer;
   position: absolute;
@@ -498,6 +525,11 @@ body {
   height: 64px;
   background-position: -138px -2px;
 }
+.sprite-stackoverflow {
+  width: 64px;
+  height: 64px;
+  background-position: -206px -2px;
+}
 .sprite-googleplus {
   width: 64px;
   height: 64px;
@@ -513,6 +545,11 @@ body {
   height: 64px;
   background-position: -138px -70px;
 }
+.sprite-starcraft2 {
+  width: 64px;
+  height: 64px;
+  background-position: -206px -70px;
+}
 .sprite-playstation {
   width: 64px;
   height: 64px;
@@ -527,16 +564,6 @@ body {
   width: 64px;
   height: 64px;
   background-position: -138px -138px;
-}
-.sprite-stackoverflow {
-  width: 64px;
-  height: 64px;
-  background-position: -206px -2px;
-}
-.sprite-starcraft2 {
-  width: 64px;
-  height: 64px;
-  background-position: -206px -70px;
 }
 .sprite-steam {
   width: 64px;
