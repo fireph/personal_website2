@@ -57,13 +57,18 @@
         </div>
         <img id="close-button" onclick="setCubeState(false)" src="img/close_button.png">
         <div id="fading-overlay" onclick="removeHash()"></div>
-        <div id="about-content" class="content">
+        <div id="about-content" class="content" onscroll="echo.render();">
             <div class="content-container">
                 <div style="position: relative;">
                     <img class="back-button" onclick="removeHash()" src="img/back-arrow.png">
                     <h1>About Me</h1>
                 </div>
-                <p>Hi, I am a software engineer! I currently work at Facebook on Android development. I enjoy biking, hiking, and video games. But most of all, I love to code. I am a proficient javascript web developer (front-end and back-end), 3D graphics programmer, and Android developer. I currently strive to master the art of crafting amazing games and 3D graphics experiences.<br><br>I often go to hack-a-thons and have built some awesome projects over the years, ranging from music websites to Bash scripting. You can check out some of my favorites that I have built on my site!<br><br>Whether it is circuit prototyping or GLSL shader development, I am always up for the challenge of learning something new and honing my skills. I have honed my skills in front-end javascipt and WebGL for the past year and I am hungering for new, harder problems to sink my teeth into.</p>
+                <p>
+                    <div class="project-img-wrap freddie-skiing">
+                        <img class="project-img" data-echo="img/projects/freddie-skiing.jpg">
+                    </div>
+                    Hi, I am a software engineer! I currently work at Facebook on Oculus Android development. I enjoy biking, hiking, and video games. But most of all, I love to code. I am a proficient javascript web developer (front-end and back-end), Hack/PHP developer, 3D graphics programmer, and Android developer. I currently strive to master the art of crafting amazing games and 3D graphics experiences.<br><br>I often go to hack-a-thons and have built some awesome projects over the years, ranging from music websites to Bash scripting. You can check out some of my favorites that I have built on my site!<br><br>Whether it is circuit prototyping or GLSL shader development, I am always up for the challenge of learning something new and honing my skills. I have honed my Android and 3D graphics knowledge for the past 3 years and I am hungering for new, harder problems to sink my teeth into.
+                </p>
             </div>
         </div>
         <div id="resume-content" class="content">
