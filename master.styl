@@ -87,12 +87,12 @@ body {
 
 .content h1 {
     text-align: center;
-    color: #BEDB39;
+    color: rgb(26, 116, 45);
 }
 
 .content h3 {
     text-align: center;
-    color: #BEDB39;
+    color: rgb(26, 116, 45);
 }
 
 project-img-width = 33%
@@ -104,6 +104,9 @@ project-img-width = 33%
     margin: 0 1em 1em 0;
     padding-top: project-img-width;
     float: left;
+    background-image: url('img/loading.gif');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .project-img {
@@ -134,7 +137,8 @@ projects = {
     sasstore: 'img/projects/sasstore.png',
     drawmyshit: 'img/projects/drawmyshit.jpg',
     trees: 'img/projects/trees.jpg',
-    mantlerock: 'img/projects/mantlerock.jpg'
+    mantlerock: 'img/projects/mantlerock.jpg',
+    freddie-skiing: 'img/projects/freddie-skiing.jpg'
 }
 
 for project-name, project-img in projects

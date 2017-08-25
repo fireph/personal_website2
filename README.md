@@ -2,5 +2,5 @@
 
 ```
 npm install --only=dev
-grunt
+npm start
 ```
