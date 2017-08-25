@@ -60,6 +60,14 @@ module.exports = function(grunt) {
         }
       },
     },
+    connect: {
+      server: {
+        options: {
+          port: 8081,
+          keepalive: true
+        }
+      }
+    },
     watch: {
       stylus: {
         files: ['master.styl'],
@@ -73,6 +81,12 @@ module.exports = function(grunt) {
         files: ['index-dev.html'],
         tasks: ['replace', 'htmlmin']
       }
+    },
+    concurrent: {
+      options: {
+        logConcurrentOutput: true
+      },
+      target: ['connect', 'watch']
     }
   });
 
@@ -80,7 +94,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-concurrent');
 
-  grunt.registerTask('default', ['stylus', 'uglify', 'replace', 'htmlmin', 'watch']);
+  grunt.registerTask('default', ['stylus', 'uglify', 'replace', 'htmlmin', 'concurrent:target']);
 };
