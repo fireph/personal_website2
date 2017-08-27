@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    jsResources: ['echo.min.js', 'master.js'],
+    jsResources: ['echo.min.js', 'master.js', 'google-analytics.js'],
     stylus: {
       compile: {
         options: {
@@ -80,6 +80,10 @@ module.exports = function(grunt) {
       html: {
         files: ['index-dev.html'],
         tasks: ['replace', 'htmlmin']
+      },
+      img: {
+        files: ['img/**/*'],
+        tasks: ['stylus', 'replace', 'htmlmin']
       }
     },
     concurrent: {

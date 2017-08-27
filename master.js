@@ -80,6 +80,10 @@ function setState(name, state) {
         addClass(document.getElementById(name), "show");
         addClass(document.getElementById("fading-overlay"), "show");
         updateEchoOverNextHalfSecond();
+        if (typeof ga === "function") {
+            ga('set', 'page', name);
+            ga('send', 'pageview');
+        }
     } else {
         close(name);
     }
