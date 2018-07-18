@@ -1,6 +1,18 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    jsResources: ['echo.min.js', 'master.js', 'google-analytics.js'],
+    jsResources: ['echo.min.js', 'modernizr-custom.js', 'master.js', 'google-analytics.js'],
+    cwebp: {
+      dynamic: {
+        options: {
+          q: 50
+        },
+        files: [{
+          expand: true,
+          src: ['img/projects/*'],
+          dest: 'webp/'
+        }]
+      }
+    },
     stylus: {
       compile: {
         options: {
@@ -82,8 +94,8 @@ module.exports = function(grunt) {
         tasks: ['replace', 'htmlmin']
       },
       img: {
-        files: ['img/**/*'],
-        tasks: ['stylus', 'replace', 'htmlmin']
+        files: ['img/projects/*'],
+        tasks: ['cwebp']
       }
     },
     concurrent: {
@@ -94,6 +106,7 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-cwebp');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-replace');
@@ -102,5 +115,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-concurrent');
 
-  grunt.registerTask('default', ['stylus', 'uglify', 'replace', 'htmlmin', 'concurrent:target']);
+  grunt.registerTask('default', ['cwebp', 'stylus', 'uglify', 'replace', 'htmlmin', 'concurrent:target']);
 };
