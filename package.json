@@ -1,0 +1,32 @@
+{
+  "name": "personal_website2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-cwebp": "^2.1.1",
+    "grunt-rename": "^0.1.4",
+    "grunt-replace": "^1.0.1"
+  },
+  "scripts": {
+    "start": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fireph/personal_website2.git"
+  },
+  "author": "Frederick Meyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fireph/personal_website2/issues"
+  },
+  "homepage": "www.fmeyer.com"
+}

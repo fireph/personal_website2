@@ -1,0 +1,522 @@
+@import 'nib'
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-image: url(img/skyline.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-size: 100%;
+    overflow: hidden;
+}
+
+#close-button {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    left: 3vw;
+    top: 3vw;
+    width: 5vw;
+    height: 5vw;
+    transition: opacity 1s ease;
+    cursor: auto;
+}
+
+#close-button.show {
+    opacity: 1.0;
+    cursor: pointer;
+}
+
+#fading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0;
+    transition: opacity 1s ease;
+    pointer-events: none;
+}
+
+#fading-overlay.show {
+    opacity: 0.75;
+    pointer-events: auto;
+}
+
+.content {
+    overflow: auto;
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    opacity: 0.0;
+    outline: 1px solid #BFBFBF;
+    transition: top 1s ease, opacity 1s ease;
+    max-width: 1024px;
+}
+
+.content.show {
+    opacity: 1;
+    top: 0;
+}
+
+.content p {
+    width: 100%;
+    float: left;
+}
+
+.content-container {
+    padding: 0 2em 2em 2em;
+}
+
+.content-subcontainer {
+    clear: both;
+}
+
+.content h1 {
+    text-align: center;
+    color: rgb(26, 116, 45);
+}
+
+.content h3 {
+    text-align: center;
+    color: rgb(26, 116, 45);
+}
+
+project-img-width = 33%
+
+.project-img-wrap {
+    position: relative;
+    width: 33%;
+    height: 0;
+    margin: 0 1em 1em 0;
+    padding-top: project-img-width;
+    float: left;
+    background-image: url('img/loading.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.project-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 3px;
+    transition: box-shadow 0.3s ease;
+}
+
+.project-img:hover {
+    box-shadow: 0 0 10px 0 rgba(138, 9, 23, 0.5);
+}
+
+img-width(img)
+    return image-size(img)[0]
+
+img-height(img)
+    return image-size(img)[1]
+    
+projects = {
+    obs-auto-record: 'img/projects/obs-auto-record.png',
+    geotagger: 'img/projects/geotagger.png',
+    hackernews: 'img/projects/hackernews.png',
+    ge-cancellation-checker: 'img/projects/ge-cancellation-checker.png',
+    trafficsweetspot: 'img/projects/trafficsweetspot.png',
+    jello: 'img/projects/jello.png',
+    chessnut: 'img/projects/chessnut.jpg',
+    sasstore: 'img/projects/sasstore.png',
+    drawmyshit: 'img/projects/drawmyshit.jpg',
+    trees: 'img/projects/trees.jpg',
+    mantlerock: 'img/projects/mantlerock.jpg',
+    freddie-skiing: 'img/projects/freddie-skiing.jpg'
+}
+
+for project-name, project-img in projects
+    .project-img-wrap.{project-name} {
+        padding-top: project-img-width * (img-height(project-img) / img-width(project-img));
+    }
+
+.back-button {
+    cursor: pointer;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    left: 0;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+}
+
+.print-button {
+    cursor: pointer;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    right: 0;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+}
+
+.background-logo {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    opacity: 0.8;
+    border-radius: 1vw;
+}
+
+.background-logo-small {
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    width: 70%;
+    height: 70%;
+    opacity: 0.8;
+    border-radius: 1vw;
+}
+
+.background-logo-xsmall {
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+    opacity: 0.8;
+    border-radius: 1vw;
+}
+
+.background-logo-text {
+    margin-left: 20%;
+    width: 60%;
+    height: 60%;
+    opacity: 0.8;
+    border-radius: 1vw;
+}
+
+.overlay-text {
+    margin-top: 5%;
+    color: #333;
+    font-size: 3vw;
+    width: 100%;
+    display:inline-block;
+    text-align: center;
+    vertical-align:middle
+}
+
+.github-cube-icon {
+    background-image: url("img/github.png");
+    background-size: cover;
+}
+
+.about-cube-icon {
+    background-image: url("img/profile_pic.jpg");
+    background-size: cover;
+}
+
+.li-cube-icon {
+    background-image: url("img/li_icon.png");
+    background-size: cover;
+}
+
+.myprojects-cube-icon {
+    background-image: url("img/myprojects.jpg");
+    background-size: cover;
+}
+
+.resume-cube-icon {
+    background-image: url("img/resume_icon.png");
+    background-size: cover;
+}
+
+.contactme-cube-icon {
+    background-image: url("img/email.png");
+    background-size: cover;
+}
+
+.viewport {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    perspective-origin: 50% 50%;
+}
+
+#cube-1 {
+    position: relative;
+    margin-top: 25vw;
+    margin-left: 50vw;
+    height: 25vw;
+    width: 25vw;
+}
+
+#cube-1.open {
+    margin-left: 25vw;
+}
+
+#cube-1.corner {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.cube {
+    transform-style: preserve-3d;
+    transform-origin: 12.5vw 12.5vw -12.5vw;
+}
+
+.cube.transitions {
+    transition: transform 2s ease, margin 2s ease;
+}
+
+.cube .cube-side {
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    height: 25vw;
+    width: 25vw;
+    background-color: #B891C3;
+    border: 1px solid #fff;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 2s ease, background-color 0.3s ease;
+    backface-visibility: hidden;
+}
+
+.cube .cube-side:hover {
+    background-color: #A86B97;
+}
+
+.cube .top {
+    transform-origin: 50% 100%;
+    transform: translateY(-25vw) rotateX(90deg);
+}
+.cube .top.unfold {
+    transform: translateY(-25vw) rotateX(0deg);
+}
+
+.cube .bottom {
+    transform-origin: 50% 0%;
+    transform: translateY(25vw) rotateX(-90deg);
+}
+.cube .bottom.unfold {
+    transform: translateY(25vw) rotateX(0deg);
+}
+
+.cube .back {
+    transform-origin: 0% 50%;
+    transform: translateX(25vw) rotateY(90deg);
+}
+.cube .back.unfold {
+    transform: translateX(25vw) rotateY(0deg);
+}
+
+.cube .front {
+    transform: translateZ(0vw);
+}
+
+.cube .right {
+    transition: transform 2s ease;
+    transform-style: preserve-3d
+    transform-origin: 0% 50%;
+    transform: translateX(25vw) rotateY(90deg);
+}
+.cube .right.unfold {
+    transform: translateX(25vw) rotateY(0deg);
+}
+
+.cube .left {
+    transform-origin: 100% 50%;
+    transform: translateX(-25vw) rotateY(-90deg);
+}
+.cube .left.unfold {
+    transform: translateX(-25vw) rotateY(0deg);
+}
+
+.content fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+.content input[type="text"],
+.content input[type="email"],
+.content input[type="tel"],
+.content input[type="url"],
+.content textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+.content input[type="text"]:hover,
+.content input[type="email"]:hover,
+.content input[type="tel"]:hover,
+.content input[type="url"]:hover,
+.content textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+.content textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+.content button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.content button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.content button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+@media screen and (min-aspect-ratio: 4/3) {
+    #close-button {
+        left: 3vh;
+        top: 3vh;
+        width: 5vh;
+        height: 5vh;
+    }
+    
+    .background-logo {
+        border-radius: 1vh;
+    }
+
+    .background-logo-small {
+        border-radius: 1vh;
+    }
+
+    .background-logo-xsmall {
+        border-radius: 1vh;
+    }
+
+    .background-logo-text {
+        border-radius: 1vh;
+    }
+
+    .overlay-text {
+        font-size: 3vh;
+    }
+
+    #cube-1 {
+        margin-top: 33.333333vh;
+        margin-left: 66.666666vh;
+        height: 33.333333vh;
+        width: 33.333333vh;
+    }
+
+    #cube-1.open {
+        margin-left: 33.333333vh;
+    }
+
+    .cube {
+        transform-origin: 16.6666665vh 16.6666665vh -16.6666665vh;
+    }
+
+    .cube .cube-side {
+        height: 33.333333vh;
+        width: 33.333333vh;
+    }
+
+    .cube .top {
+        transform: translateY(-33.333333vh) rotateX(90deg);
+    }
+    .cube .top.unfold {
+        transform: translateY(-33.333333vh) rotateX(0deg);
+    }
+
+    .cube .bottom {
+        transform: translateY(33.333333vh) rotateX(-90deg);
+    }
+    .cube .bottom.unfold {
+        transform: translateY(33.333333vh) rotateX(0deg);
+    }
+
+    .cube .back {
+        transform: translateX(33.333333vh) rotateY(90deg);
+    }
+    .cube .back.unfold {
+        transform: translateX(33.333333vh) rotateY(0deg);
+    }
+
+    .cube .front {
+        transform: translateZ(0vh);
+    }
+
+    .cube .right {
+        transform: translateX(33.333333vh) rotateY(90deg);
+    }
+    .cube .right.unfold {
+        transform: translateX(33.333333vh) rotateY(0deg);
+    }
+
+    .cube .left {
+        transform: translateX(-33.333333vh) rotateY(-90deg);
+    }
+    .cube .left.unfold {
+        transform: translateX(-33.333333vh) rotateY(0deg);
+    }
+}
