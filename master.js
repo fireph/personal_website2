@@ -330,7 +330,7 @@ function toggleTheme() {
    }
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', function(event) {
     var inputToggle = document.getElementById('slider');
     if (localStorage.getItem('theme') === 'theme-light') {
         setTheme('theme-light');
