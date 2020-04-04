@@ -396,8 +396,6 @@ for project-name, project-img in projects
 .content input[type="tel"]:hover,
 .content input[type="url"]:hover,
 .content textarea:hover {
-  -webkit-transition: border-color 0.3s ease-in-out;
-  -moz-transition: border-color 0.3s ease-in-out;
   transition: border-color 0.3s ease-in-out;
   border: 1px solid #aaa;
 }
@@ -423,8 +421,6 @@ for project-name, project-img in projects
 
 .content button[type="submit"]:hover {
   background: #43A047;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -575,7 +571,6 @@ for project-name, project-img in projects
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: 0.4s;
     transition: 0.4s;
 }
 
@@ -584,17 +579,17 @@ for project-name, project-img in projects
     content: "";
     height: 4vmin;
     width: 4vmin;
-    left: 0;
+    left: -0.5vmin;
     bottom: 0.4vmin;
     top: 0;
     bottom: 0;
     margin: auto 0;
-    -webkit-transition: 0.4s;
     transition: 0.4s;
     box-shadow: 0 0 1.5vmin #2020203d;
     background: white url('img/night.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 2.4vmin 2.4vmin;
 }
 
 input:checked + .slider {
@@ -606,12 +601,11 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(2.4vmin);
-    -ms-transform: translateX(2.4vmin);
-    transform: translateX(2.4vmin);
+    transform: translateX(3vmin);
     background: white url('img/sunny.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 2.4vmin 2.4vmin;
 }
 
 /* Rounded sliders */
