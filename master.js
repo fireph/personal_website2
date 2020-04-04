@@ -308,3 +308,35 @@ window.onkeyup = function(evt) {
         }
     }
 };
+
+function toggleTheme() {
+    if (state && !cubeSideClickable) {
+        window.location.hash = "#!/open/";
+    } else if (!state && cubeSideClickable) {
+        window.location.hash = "#!/";
+    }
+}
+
+function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.documentElement.className = themeName;
+}
+
+function toggleTheme() {
+   if (localStorage.getItem('theme') === 'theme-dark'){
+       setTheme('theme-light');
+   } else {
+       setTheme('theme-dark');
+   }
+}
+
+(function () {
+    if (localStorage.getItem('theme') === 'theme-light') {
+        setTheme('theme-light');
+    } else {
+        setTheme('theme-dark');
+    }
+    setTimeout(function() {
+        document.getElementsByTagName("BODY")[0].className = 'animate';
+    }, 1000);
+})();

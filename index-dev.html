@@ -56,6 +56,10 @@
             </div>
         </div>
         <img id="close-button" onclick="setCubeState(false)" src="img/close_button.png">
+        <label id="theme-switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+        </label>
         <div id="fading-overlay" onclick="removeHash()"></div>
         <div id="about-content" class="content" onscroll="echo.render();">
             <div class="content-container">

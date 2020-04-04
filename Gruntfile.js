@@ -90,7 +90,7 @@ module.exports = function(grunt) {
         tasks: ['uglify', 'replace', 'htmlmin']
       },
       html: {
-        files: ['index-dev.html'],
+        files: ['index-dev.html', 'resume/index.html'],
         tasks: ['replace', 'htmlmin']
       },
       img: {

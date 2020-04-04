@@ -9,30 +9,50 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
+.theme-light {
+    --color-background: #FFFFFF;
+    --font-color: #2B2A29;
+    --image-invert: 0;
+}
+
+.theme-dark {
+    --color-background: #181A1B;
+    --font-color: #ffffff;
+    --image-invert: 1;
+}
+
 body {
+    background-color: var(--color-background);
     background-image: url(img/skyline.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center bottom;
     background-size: 100%;
     overflow: hidden;
+    color: var(--font-color);
+}
+
+body.animate {
+    transition: background-color 1s ease;
 }
 
 #close-button {
     cursor: pointer;
     opacity: 0;
     position: absolute;
-    left: 3vw;
-    top: 3vw;
-    width: 5vw;
-    height: 5vw;
-    transition: opacity 1s ease;
+    left: 3vmin;
+    top: 3vmin;
+    width: 5vmin;
+    height: 5vmin;
+    filter: invert(var(--image-invert));
+    transition: opacity 1s ease, filter 1s ease;
     cursor: auto;
 }
 
 #close-button.show {
     opacity: 1.0;
     cursor: pointer;
+    filter: invert(var(--image-invert));
 }
 
 #fading-overlay {
@@ -60,7 +80,7 @@ body {
     left: 50%;
     width: 100%;
     transform: translateX(-50%);
-    background-color: #ffffff;
+    background-color: var(--color-background);
     opacity: 0.0;
     outline: 1px solid #BFBFBF;
     transition: top 1s ease, opacity 1s ease;
@@ -156,6 +176,7 @@ for project-name, project-img in projects
     left: 0;
     top: 50%;
     transform: perspective(1px) translateY(-50%);
+    filter: invert(var(--image-invert));
 }
 
 .print-button {
@@ -166,6 +187,7 @@ for project-name, project-img in projects
     right: 0;
     top: 50%;
     transform: perspective(1px) translateY(-50%);
+    filter: invert(var(--image-invert));
 }
 
 .background-logo {
@@ -363,9 +385,10 @@ for project-name, project-img in projects
 .content textarea {
   width: 100%;
   border: 1px solid #ccc;
-  background: #FFF;
+  background: var(--color-background);
   margin: 0 0 5px;
   padding: 10px;
+  color: var(--font-color);
 }
 
 .content input[type="text"]:hover,
@@ -383,6 +406,8 @@ for project-name, project-img in projects
   height: 100px;
   max-width: 100%;
   resize: none;
+  background: var(--color-background);
+  color: var(--font-color);
 }
 
 .content button[type="submit"] {
@@ -519,4 +544,81 @@ for project-name, project-img in projects
     .cube .left.unfold {
         transform: translateX(-33.333333vh) rotateY(0deg);
     }
+}
+
+#theme-switch {
+    position: absolute;
+    right: 3vmin;
+    top: 3vmin;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    display: inline-block;
+    width: 6vmin;
+    height: 3.4vmin;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 4vmin;
+    width: 4vmin;
+    left: 0;
+    bottom: 0.4vmin;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 0 1.5vmin #2020203d;
+    background: white url('img/night.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(2.4vmin);
+    -ms-transform: translateX(2.4vmin);
+    transform: translateX(2.4vmin);
+    background: white url('img/sunny.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 3.4vmin;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
