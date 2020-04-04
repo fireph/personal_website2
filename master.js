@@ -330,13 +330,16 @@ function toggleTheme() {
    }
 }
 
-(function () {
+document.addEventListener('DOMContentLoaded', (event) => {
+    var inputToggle = document.getElementById('slider');
     if (localStorage.getItem('theme') === 'theme-light') {
         setTheme('theme-light');
+        inputToggle.checked = true;
     } else {
         setTheme('theme-dark');
+        inputToggle.checked = false;
     }
     setTimeout(function() {
         document.getElementsByTagName("BODY")[0].className = 'animate';
     }, 1000);
-})();
+});
