@@ -124,9 +124,7 @@ project-img-width = 33%
     margin: 0 1em 1em 0;
     padding-top: project-img-width;
     float: left;
-    background-image: url('img/loading.gif');
-    background-repeat: no-repeat;
-    background-position: center;
+    border-radius: 3px;
 }
 
 .project-img {
@@ -166,6 +164,7 @@ for project-name, project-img in projects
     .project-img-wrap.{project-name} {
         background-image: embedurl('tiny/' + project-img)
         background-size: cover;
+        border-radius: 3px;
         padding-top: project-img-width * (img-height(project-img) / img-width(project-img));
     }
 
