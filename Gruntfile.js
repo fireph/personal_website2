@@ -1,6 +1,14 @@
 module.exports = function(grunt) {
+  const jimp = require('jimp');
+  const glob = require('glob');
+  const path = require("path");
+
   grunt.initConfig({
     jsResources: ['echo.min.js', 'modernizr-custom.js', 'master.js', 'google-analytics.js'],
+    clean: {
+      webp: ['webp/img/projects/*'],
+      tiny: ['tiny/img/projects/*']
+    },
     cwebp: {
       dynamic: {
         options: {
@@ -95,7 +103,7 @@ module.exports = function(grunt) {
       },
       img: {
         files: ['img/projects/*'],
-        tasks: ['cwebp']
+        tasks: ['clean', 'jimp', 'cwebp']
       }
     },
     concurrent: {
@@ -106,6 +114,43 @@ module.exports = function(grunt) {
     }
   });
 
+  function resizeDirectoryImages(srcPath, dstPath, { width = jimp.AUTO, height = jimp.AUTO }) {
+    return new Promise((resolve, reject) => {
+      glob(srcPath + "*.@(png|jpg|jpeg|bmp)", { nocase: true, nodir: true, realpath: true}, (err, files) => {
+        if(err) {
+          reject(err);
+        } else {
+          resolve(files);
+        }
+      });
+    }).then(files => {
+      return Promise.all(files.map(filepath => {
+        return new Promise((resolve, reject) => {
+          return jimp.read(filepath).then(image => {
+            let newFilePath = path.join(dstPath, path.basename(filepath))
+            image
+              .resize(width, height)
+              .write(newFilePath, (err) => {
+                if(err) {
+                  reject(err);
+                } else {
+                  resolve(newFilePath);
+                }
+              });
+          })
+        }).then(console.log)
+      }));
+    });
+  }
+
+  grunt.registerTask('jimp', 'Jimp resize for low-res previews of project images.', function() {
+    resizeDirectoryImages('img/projects/', 'tiny/img/projects/', { width: 16 })
+      .then(() => {
+        console.log('Done!');
+      });
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-cwebp');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -115,5 +160,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-concurrent');
 
-  grunt.registerTask('default', ['cwebp', 'stylus', 'uglify', 'replace', 'htmlmin', 'concurrent:target']);
+  grunt.registerTask('default', ['clean', 'jimp', 'cwebp', 'stylus', 'uglify', 'replace', 'htmlmin', 'concurrent:target']);
 };

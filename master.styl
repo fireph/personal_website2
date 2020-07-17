@@ -164,6 +164,8 @@ projects = {
 
 for project-name, project-img in projects
     .project-img-wrap.{project-name} {
+        background-image: embedurl('tiny/' + project-img)
+        background-size: cover;
         padding-top: project-img-width * (img-height(project-img) / img-width(project-img));
     }
 
