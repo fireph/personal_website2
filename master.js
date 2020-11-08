@@ -27,7 +27,6 @@ var previousFrameTime = Date.now();
 function printResume() {
   var newWindow = window.open();
   var innerHtml = document.getElementById("resume-container").innerHTML;
-  console.log(innerHtml);
   newWindow.document.write(
     innerHtml + "<style>table.resume{font-size:0.65em;}</style>"
   );
@@ -36,7 +35,9 @@ function printResume() {
   newWindow.focus(); // necessary for IE >= 10
 
   newWindow.print();
-  newWindow.close();
+  newWindow.onafterprint = function() {
+    newWindow.close();
+  }
 }
 
 function addClass(ele, cName) {
