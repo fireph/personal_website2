@@ -168,10 +168,11 @@ module.exports = function (grunt) {
     "jimp",
     "Jimp resize for low-res previews of project images.",
     function () {
+      var done = this.async();
       resizeDirectoryImages("img/projects/", "tiny/img/projects/", {
         width: 16,
       }).then(() => {
-        console.log("Done!");
+        done();
       });
     }
   );
