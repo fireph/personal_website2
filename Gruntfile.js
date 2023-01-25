@@ -32,6 +32,10 @@ module.exports = function (grunt) {
             dest: "jpg/",
             ext: ".jpg",
           },
+          {
+            "jpg/img/profile_pic.jpg": "img/profile_pic.jpg",
+            "jpg/img/myprojects.jpg": "img/myprojects.jpg",
+          },
         ],
       },
       webp: {
@@ -45,6 +49,10 @@ module.exports = function (grunt) {
             dest: "webp/",
             ext: ".webp",
           },
+          {
+            "webp/img/profile_pic.webp": "img/profile_pic.jpg",
+            "webp/img/myprojects.webp": "img/myprojects.jpg",
+          },
         ],
       },
       avif: {
@@ -57,6 +65,10 @@ module.exports = function (grunt) {
             src: ["img/projects/*"],
             dest: "avif/",
             ext: ".avif",
+          },
+          {
+            "avif/img/profile_pic.avif": "img/profile_pic.jpg",
+            "avif/img/myprojects.avif": "img/myprojects.jpg",
           },
         ],
       },

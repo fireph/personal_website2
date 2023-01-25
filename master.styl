@@ -245,8 +245,16 @@ for project-name, project-img in projects
 }
 
 .about-cube-icon {
-  background-image: url("img/profile_pic.jpg");
   background-size: cover;
+}
+.fallback .about-cube-icon {
+  background-image: url("jpg/img/profile_pic.jpg");
+}
+.webp .about-cube-icon {
+  background-image: url("webp/img/profile_pic.webp");
+}
+.avif .about-cube-icon {
+  background-image: url("avif/img/profile_pic.avif");
 }
 
 .li-cube-icon {
@@ -255,8 +263,16 @@ for project-name, project-img in projects
 }
 
 .myprojects-cube-icon {
-  background-image: url("img/myprojects.jpg");
   background-size: cover;
+}
+.fallback .myprojects-cube-icon {
+  background-image: url("jpg/img/myprojects.jpg");
+}
+.webp .myprojects-cube-icon {
+  background-image: url("webp/img/myprojects.webp");
+}
+.avif .myprojects-cube-icon {
+  background-image: url("avif/img/myprojects.avif");
 }
 
 .resume-cube-icon {
