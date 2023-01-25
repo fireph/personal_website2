@@ -1,16 +1,3 @@
-var echoReady = false;
-
-Modernizr.on("webp", function (result) {
-  if (result) {
-    var items = document.querySelectorAll("[data-webp]");
-    for (var i = 0; i < items.length; i++) {
-      items[i].setAttribute("data-echo", items[i].getAttribute("data-webp"));
-    }
-  }
-  echo.init();
-  echoReady = true;
-});
-
 window.requestAnimFrame = (function () {
   return (
     window.requestAnimationFrame ||
@@ -78,26 +65,11 @@ function closeAll() {
   }
 }
 
-function updateEchoOverNextHalfSecond() {
-  if (echoReady) echo.render();
-  var num = 0;
-  var interval = setInterval(function () {
-    if (num == 4) {
-      clearInterval(interval);
-    }
-    if (echoReady) {
-      echo.render();
-      num++;
-    }
-  }, 250);
-}
-
 function setState(name, state) {
   if (state && cubeSideClickable) {
     closeAll();
     addClass(document.getElementById(name), "show");
     addClass(document.getElementById("fading-overlay"), "show");
-    updateEchoOverNextHalfSecond();
     if (typeof ga === "function") {
       ga("set", "page", name);
       ga("send", "pageview");

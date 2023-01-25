@@ -1,6 +1,7 @@
 # personal_website2
 
 ```
-npm install --only=dev
+scoop install libavif cwebp mozjpeg
+npm install
 npm start
 ```

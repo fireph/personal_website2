@@ -2,6 +2,10 @@ module.exports = function (grunt) {
   const jimp = require("jimp");
   const glob = require("glob");
   const path = require("path");
+  const imagemin = require("imagemin");
+  const imageminWebp = require("imagemin-webp");
+  const imageminAvif = require("imagemin-avif");
+  const imageminMozjpeg = require("imagemin-mozjpeg");
 
   grunt.initConfig({
     jsResources: [
@@ -11,19 +15,48 @@ module.exports = function (grunt) {
       "google-analytics.js",
     ],
     clean: {
-      webp: ["webp/img/projects/*"],
-      tiny: ["tiny/img/projects/*"],
+      webp: ["webp/**"],
+      avif: ["avif/**"],
+      jpg: ["jpg/**"],
+      tiny: ["tiny/**"],
     },
-    cwebp: {
-      dynamic: {
+    imagemin: {
+      jpg: {
         options: {
-          q: 50,
+          use: [imageminMozjpeg({ quality: 50 })],
+        },
+        files: [
+          {
+            expand: true,
+            src: ["img/projects/*"],
+            dest: "jpg/",
+            ext: ".jpg",
+          },
+        ],
+      },
+      webp: {
+        options: {
+          use: [imageminWebp({ method: 6, quality: 50 })],
         },
         files: [
           {
             expand: true,
             src: ["img/projects/*"],
             dest: "webp/",
+            ext: ".webp",
+          },
+        ],
+      },
+      avif: {
+        options: {
+          use: [imageminAvif({ speed: 0, quality: 50 })],
+        },
+        files: [
+          {
+            expand: true,
+            src: ["img/projects/*"],
+            dest: "avif/",
+            ext: ".avif",
           },
         ],
       },
@@ -55,7 +88,8 @@ module.exports = function (grunt) {
           patterns: [
             {
               //Grab the <!--build-resume-start--> and <!--build-resume-end--> comments and everything in-between
-              match: /\<\!\-\-build\-resume\-start[\s\S]*build\-resume\-end\-\-\>/,
+              match:
+                /\<\!\-\-build\-resume\-start[\s\S]*build\-resume\-end\-\-\>/,
               replacement: '<%= grunt.file.read("resume/index.html") %>',
             },
             {
@@ -116,7 +150,7 @@ module.exports = function (grunt) {
       },
       img: {
         files: ["img/projects/*"],
-        tasks: ["clean", "jimp", "cwebp"],
+        tasks: ["clean", "jimp", "cwebp", "avif"],
       },
     },
     concurrent: {
@@ -177,8 +211,22 @@ module.exports = function (grunt) {
     }
   );
 
+  // grunt.registerTask(
+  //   "avif",
+  //   "Imagemin AVIF convert for project images.",
+  //   function () {
+  //     var done = this.async();
+  //     imagemin(["img/projects/*"], {
+  //       destination: "avif/img/projects/",
+  //       use: [imageminAvif({speed: 0, quality: 50})],
+  //     }).then(() => {
+  //       done();
+  //     });
+  //   }
+  // );
+
   grunt.loadNpmTasks("grunt-contrib-clean");
-  grunt.loadNpmTasks("grunt-cwebp");
+  grunt.loadNpmTasks("grunt-contrib-imagemin");
   grunt.loadNpmTasks("grunt-contrib-stylus");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-replace");
@@ -190,7 +238,7 @@ module.exports = function (grunt) {
   grunt.registerTask("default", [
     "clean",
     "jimp",
-    "cwebp",
+    "imagemin",
     "stylus",
     "uglify",
     "replace",
