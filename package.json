@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy-prod": "tsc && vite build && echo www.fmeyer.com > dist/CNAME && gh-pages-clean && gh-pages --dist dist --repo https://github.com/fireph/personal_website2.git --branch gh-pages --src **/!(*.js.map)"
+    "deploy": "tsc && vite build && echo www.fmeyer.com > dist/CNAME && gh-pages-clean && gh-pages --dist dist --repo https://github.com/fireph/personal_website2.git --branch gh-pages --src **/!(*.js.map)"
   },
   "devDependencies": {
     "@types/google.analytics": "^0.0.42",
