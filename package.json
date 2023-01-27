@@ -12,6 +12,7 @@
   "devDependencies": {
     "@types/google.analytics": "^0.0.42",
     "@vitejs/plugin-legacy": "^3.0.2",
+    "gh-pages": "^5.0.0",
     "nib": "^1.2.0",
     "sharp": "^0.31.3",
     "stylus": "^0.59.0",
