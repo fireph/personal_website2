@@ -1,38 +1,24 @@
 {
-  "name": "personal_website2",
+  "name": "personal_website22",
+  "private": true,
   "version": "1.0.0",
-  "description": "Can't upgrade imagemin imagemin-mozjpeg imagemin-webp",
-  "main": "index.html",
-  "devDependencies": {
-    "glob": "^8.1.0",
-    "grunt": "^1.5.3",
-    "grunt-concurrent": "^3.0.0",
-    "grunt-contrib-clean": "^2.0.1",
-    "grunt-contrib-connect": "^3.0.0",
-    "grunt-contrib-htmlmin": "^3.1.0",
-    "grunt-contrib-imagemin": "^4.0.0",
-    "grunt-contrib-stylus": "github:fireph/grunt-contrib-stylus",
-    "grunt-contrib-uglify": "^5.2.2",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-cwebp": "^3.0.3",
-    "grunt-replace": "^2.0.2",
-    "imagemin": "^7.0.1",
-    "imagemin-avif": "^0.1.4",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-webp": "^6.0.0",
-    "jimp": "^0.16.2"
-  },
+  "type": "module",
   "scripts": {
-    "start": "grunt"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "deploy-prod": "tsc && vite build && echo www.fmeyer.com > dist/CNAME && gh-pages-clean && gh-pages --dist dist --repo https://github.com/fireph/personal_website2.git --branch gh-pages --src **/!(*.js.map)"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fireph/personal_website2.git"
-  },
-  "author": "Frederick Meyer",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fireph/personal_website2/issues"
-  },
-  "homepage": "www.fmeyer.com"
+  "devDependencies": {
+    "@types/google.analytics": "^0.0.42",
+    "@vitejs/plugin-legacy": "^3.0.2",
+    "nib": "^1.2.0",
+    "sharp": "^0.31.3",
+    "stylus": "^0.59.0",
+    "terser": "^5.16.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-singlefile": "^0.13.2"
+  }
 }
