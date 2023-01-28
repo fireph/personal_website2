@@ -215,7 +215,7 @@ function fold() {
   closeAll();
   removeClass(document.getElementById("close-button"), "show");
   cubeSideClickable = false;
-  foldTimeout = setTimeout(function () {
+  foldTimeout = window.setTimeout(function () {
     if (!animationEnabled) {
       animationEnabledTime = Date.now();
     }

@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@types/google.analytics": "^0.0.42",
+    "@types/node": "^18.11.18",
     "@vitejs/plugin-legacy": "^3.0.2",
     "gh-pages": "^5.0.0",
     "nib": "^1.2.0",
