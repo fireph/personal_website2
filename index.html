@@ -107,7 +107,7 @@
                     <h1>Contact Me</h1>
                 </div>
                 <div style="text-align: center">
-                    <form action="https://formfling.fmeyer.com/submit" method="POST">
+                    <form id="contact-form" action="https://formfling.fmeyer.com/submit" method="POST">
                         <fieldset>
                             <input placeholder="Your name" type="text" name="name" tabindex="1" required autofocus>
                         </fieldset>
@@ -124,7 +124,13 @@
                             <textarea placeholder="Type your message here...." minlength="20" name="message" tabindex="5" required></textarea>
                         </fieldset>
                         <fieldset>
-                            <button type="submit">Submit</button>
+                            <button type="submit"
+                                    class="g-recaptcha"
+                                    data-sitekey="6LfCjnMrAAAAAPROp5ixxqfruo_jidoQj9Wb4OPT"
+                                    data-callback="onContactSubmit"
+                                    data-action="submit">
+                                Submit
+                            </button>
                         </fieldset>
                     </form>
                 </div>
@@ -281,6 +287,12 @@
             </div>
         </div>
         <script src="csi.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script>
+            function onContactSubmit(token) {
+                document.getElementById("contact-form").submit();
+            }
+        </script>
         <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' lazyload>
     </body>
 </html>
