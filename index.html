@@ -290,7 +290,12 @@
         <script src="https://www.google.com/recaptcha/api.js"></script>
         <script>
             function onContactSubmit(token) {
-                document.getElementById("contact-form").submit();
+                cost form = document.getElementById("contact-form");
+                if (form.checkValidity()) {
+                    form.submit();
+                } else {
+                    form.reportValidity();
+                }
             }
         </script>
         <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' lazyload>
